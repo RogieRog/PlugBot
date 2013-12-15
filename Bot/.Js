@@ -49,7 +49,7 @@ toSave = {};
 toSave.settings = mubBot.settings;
 toSave.moderators = mubBot.moderators;
  
-mubBot.misc.version = "2.0.77";
+mubBot.misc.version = "1.0";
 mubBot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 mubBot.misc.changelog = "Added a secondary check for history";
 mubBot.misc.ready = true;

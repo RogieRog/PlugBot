@@ -404,7 +404,7 @@ botMethods.djAdvanceEvent = function(data){
                     command[1] = command[1] + ' ' + command[i];
                 }
             }
-            if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(data.fromID).permission > 1){
+            if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(data.fromID).permission > 1 || API.getUser(fromID).permission < 2){
                 switch(command[0].toLowerCase()){
  
                     case "votes":

@@ -432,7 +432,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "commands":
-                        if(API.getUser(fromID).permission < 2 || mubBot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission < 2){
                         if(typeof command[1] === "undefined"){
                            API.sendChat(".{command} mention is included");
                         setTimeout(function(){

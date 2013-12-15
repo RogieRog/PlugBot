@@ -298,7 +298,7 @@ function DJ(obj) {
  
 API.on(API.VOTE_SKIP, SKIP);
 function SKIP() {
-API.sendChat("Yo bruh don't play that shitty music again!");
+API.sendChat("Sorry Cowboy don't play that shitty music again!");
 }
  
 API.on(API.CURATE_UPDATE, callback);
@@ -374,21 +374,21 @@ botMethods.djAdvanceEvent = function(data){
     var song = API.getMedia();
     if(botMethods.checkHistory() > 0 && mubBot.settings.historyFilter){
         if(API.getUser().permission < 2){
-            API.sendChat("This song is in the history! You should make me a mod so that I could skip it!");
+            //API.sendChat("This song is in the history! You should make me a mod so that I could skip it!");
         }else if(API.getUser().permission > 1){
-            API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
-            API.moderateForceSkip();
+            //API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
+            //API.moderateForceSkip();
         }else if(song.duration > mubBot.settings.maxLength * 60){
             mubBot.pubVars.skipOnExceed = setTimeout( function(){
-                API.sendChat("@"+ API.getDJ().username +" You have now played for as long as this room allows, time to let someone else have the booth!");
-                API.moderateForceSkip();
+                //API.sendChat("@"+ API.getDJ().username +" You have now played for as long as this room allows, time to let someone else have the booth!");
+                //API.moderateForceSkip();
             }, mubBot.settings.maxLength * 60000);
             API.sendChat("@"+ API.getDJ().username +" This song will be skipped " + mubBot.settings.maxLength + " minutes from now because it exceeds the max song length.");
         }else{
             setTimeout(function(){
                 if(botMethods.checkHistory() > 0 && mubBot.settings.historyFilter){
-                    API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
-                    API.moderateForceSkip();
+                    //API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
+                    //API.moderateForceSkip();
                 };
             }, 1500);
         }
@@ -396,7 +396,7 @@ botMethods.djAdvanceEvent = function(data){
 };
  
     API.on(API.CHAT, function(data){
-        if(data.message.indexOf('!') === 0){
+        if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var command = msg.substring(1).split(' ');
             if(typeof command[2] != "undefined"){
@@ -429,6 +429,17 @@ botMethods.djAdvanceEvent = function(data){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
+                        break;
+                        
+                    case "commands":
+                        if(API.getUser(fromID).permission < 2 || mubBot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
+                           API.sendChat(".{command} mention is included");
+                        setTimeout(function(){
+                           API.sendChat("rules | theme | wiki | link | define | songlink | download | props | votes | djinfo | bot | ping | marco | join | leave | woot | meh | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami | ");
+                        }, 650);
+                        }
+                    }
                         break;
  
                     case "whoami":
@@ -520,12 +531,12 @@ botMethods.djAdvanceEvent = function(data){
  
                     case "roomhelp":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Welcome to the Hip Hop Turntable! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music. Most Hip Hip music allowed.");
+                            API.sendChat("Welcome to the The Country Club! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music. Most Hip Hip music allowed.");
                                 setTimeout(function(){
                             API.sendChat("Ask a mod if you're unsure about your song choice.");
                          }, 650);
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+ "Welcome to the Dubstep Den! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music. Most Hip Hop music is allowed.");
+                            API.sendChat(command[1]+ "Welcome to the The Country Club! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music. Most Hip Hop music is allowed.");
                                 setTimeout(function(){
                             API.sendChat("Ask a mod if you're unsure about your song choice.");
                          }, 650);
@@ -624,7 +635,7 @@ botMethods.djAdvanceEvent = function(data){
     });
  
         API.on(API.CHAT, function(data){
-        if(data.message.indexOf('!') === 0){
+        if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var command = msg.substring(1).split(' ');
             if(typeof command[2] != "undefined"){
@@ -986,34 +997,25 @@ botMethods.djAdvanceEvent = function(data){
     });
  
     API.on(API.CHAT, function(data){
-        if(data.message.indexOf('!rule ') === 0){
+        if(data.message.indexOf('.rule ') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var command = msg.substring(1).split(' ');
         if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 ||API.getUser(fromID).permission > 1){
                 switch(command[1]){
                     case '1':
-                        API.sendChat("Play mostly hip hop.");
+                        API.sendChat("Have some fun and Leave the drama at the door.");
                         break;
                     case '2':
-                        API.sendChat("Avoid mainstream hip hop.");
+                        API.sendChat("eep it somewhat family friendly.");
                         break;
                     case '3':
-                        API.sendChat("Trolls well be force to be booted.");
-                        break;
-                    case '4':
-                        API.sendChat("No auto join.");
-                        break;
-                    case '5':
-                        API.sendChat("No songs over "+ mubBot.settings.maxLength +" minutes.");
-                        break;
-                    case '6':
-                        API.sendChat("No swag hip-pop.");
-                        break;
-                    case '7':
-                        API.sendChat("Woot while on waitlist.");
+                        API.sendChat("Mods have final say.");
                         break;
                     default:
-                        API.sendChat("You faggot that's an Unknown rule!");
+                        API.sendChat("Seems like you ain't from around here huh?!");
+                        setTimeout(function(){
+                        API.sendChat("Welp... Thats an Unknown Rule.");
+                        }, 650);
                         break;
                 }
             }
@@ -1021,7 +1023,7 @@ botMethods.djAdvanceEvent = function(data){
     });
    
         API.on(API.CHAT, function(data){
-        if(data.message.indexOf('!') === 0){
+        if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var command = msg.substring(1).split(' ');
             if(typeof command[2] != "undefined"){
@@ -1351,7 +1353,7 @@ botMethods.djAdvanceEvent = function(data){
                                 case 0:
                                     API.sendChat("Hugs? Forget that!");
                                     setTimeout(function(){
-                                        API.sendChat("/me grabs @"+botMethods.cleanString(command[1])+"'s ass");
+                                    API.sendChat("/me grabs @"+botMethods.cleanString(command[1])+"'s ass");
                                     }, 650);
                                     break;
                                 case 1:

@@ -283,7 +283,7 @@ API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-API.sendChat("Welcome to The Country Music @"+ user.username +". To favorite/save the room just bookmark the webpage on your browser.");
+API.sendChat("Welcome to The Country Music @"+ user.username +"!");
 }
  
 API.on(API.DJ_ADVANCE, DJ);
@@ -440,7 +440,7 @@ botMethods.djAdvanceEvent = function(data){
                         }, 650);
                         setTimeout(function(){
                            API.sendChat("test | join | leave | woot | meh | skip | tcf | trf | tsf | tbf | version | lock | unlock | lockskip | save | source | status | cooldown | maxlength");
-                        }, 650);
+                        }, 1000);
                         }
                     }
                         break;

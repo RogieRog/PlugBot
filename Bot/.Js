@@ -283,7 +283,7 @@ API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-API.sendChat("Welcome to Hip Hop TurnTable @"+ user.username +". To favorite/save the room just bookmark the webpage on your browser.");
+API.sendChat("Welcome to The Country Music @"+ user.username +". To favorite/save the room just bookmark the webpage on your browser.");
 }
  
 API.on(API.DJ_ADVANCE, DJ);

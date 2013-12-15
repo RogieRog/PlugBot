@@ -436,10 +436,10 @@ botMethods.djAdvanceEvent = function(data){
                         if(typeof command[1] === "undefined"){
                            API.sendChat(".{command} mention is included");
                         setTimeout(function(){
-                           API.sendChat("rules | theme | wiki | link | define | songlink | download | props | votes | djinfo | bot | ping | marco | join | leave | woot | meh | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami | test | Skip | tcf | trf | tsf | version | creator | bot | lock | unlock | lockskip");
+                           API.sendChat("rules | theme | wiki | link | define | songlink | download | props | votes | djinfo | bot | ping | marco | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami ");
                         }, 650);
                         setTimeout(function(){
-                           API.sendChat(" commands | creator | bot | lock | unlock | lockskip");
+                           API.sendChat("test | join | leave | woot | meh | skip | tcf | trf | tsf | tbf | version | lock | unlock | lockskip | save | source | status | cooldown | maxlength");
                         }, 650);
                         }
                     }
@@ -649,18 +649,7 @@ botMethods.djAdvanceEvent = function(data){
             if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
                 switch(command[0].toLowerCase()){
  
-                case "add":
-                    if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
-                    var a = JSON.parse(LocalStorage.getItem('playlist')),
-                    b;
-                    for (var b in a) {
-                    if (a[b].selected)
-                        return Context.dispatch(new MCE(MCE.CURATE, a[b].id)), true;
-                        }
-                }
-                        break;
- 
-                    case "say":
+                case "say":
                     if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                             }else{
@@ -680,7 +669,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
  
                     case "unlock":
-                        if(mubBot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                             API.moderateLockWaitList(false);
                         }
@@ -688,7 +677,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                
                     case "lock":
-                        if(mubBot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                             API.moderateLockWaitList(true);
                         }
@@ -746,7 +735,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
  
                     case "lockskip":
-                        if(mubBot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             API.moderateLockWaitList(true);
                             API.moderateForceSkip();
                         setTimeout(function(){
@@ -766,10 +755,10 @@ botMethods.djAdvanceEvent = function(data){
                         break;
  
                     case "source":
-                        if(mubBot.admins.indexOf(fromID) > -1){
-                            API.sendChat("Sup Admin "+ data.from +"! My source is located here: http://goo.gl/VjPC3N");
+                        if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
+                            API.sendChat("Howdy Staff "+ data.from +"! My source is located here: http://goo.gl/xarlwt");
                             }else{
-                            API.sendChat("This command requires Admins only!");
+                            API.sendChat("This command requires bouncer only!");
                         }
                         break;
  
@@ -817,7 +806,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
        
                     case "tcf":
-                        if(mubBot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             if(mubBot.settings.commandFilter){
                                 mubBot.settings.commandFilter = false;
                                 API.sendChat("Bot will no longer filter commands.");
@@ -869,7 +858,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                  
                     case "version":
-                        if(mubBot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             API.sendChat("CountryBot version " + mubBot.misc.version);
                             }else{
                                 API.sendChat("This command requires Admins only!");

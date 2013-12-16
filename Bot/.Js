@@ -382,7 +382,7 @@ botMethods.djAdvanceEvent = function(data){
                 //API.sendChat("@"+ API.getDJ().username +" You have now played for as long as this room allows, time to let someone else have the booth!");
                 //API.moderateForceSkip();
             }, Countrybot.settings.maxLength * 60000);
-            API.sendChat("@"+ API.getDJ().username +" This song will be skipped " + mubBot.settings.maxLength + " minutes from now because it exceeds the max song length.");
+            API.sendChat("@"+ API.getDJ().username +" This song will be skipped " + Countrybot.settings.maxLength + " minutes from now because it exceeds the max song length.");
         }else{
             setTimeout(function(){
                 if(botMethods.checkHistory() > 0 && Countrybot.settings.historyFilter){

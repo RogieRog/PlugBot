@@ -440,8 +440,7 @@ botMethods.djAdvanceEvent = function(data){
                         setTimeout(function(){
                            API.sendChat("test | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
                         }, 1000);
-                        }
-                    }
+                      }
                         break;
  
                     case "whoami":

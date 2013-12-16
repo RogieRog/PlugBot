@@ -441,7 +441,7 @@ botMethods.djAdvanceEvent = function(data){
  
                     case "bot":
                         if(API.getUser(fromID).permission < 2 || Countrybot.admins.indexOf(fromID) > -1){
-                            API.sendChat("What faggot? @"+ data.from);
+                            API.sendChat("You have something to say?? @"+ data.from);
                             Countrybot.misc.ready = false;
                             setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
                         }

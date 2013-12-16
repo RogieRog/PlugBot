@@ -436,7 +436,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(typeof command[1] === "undefined"){
                            API.sendChat(".{command} mention is included");
                         setTimeout(function(){
-                           API.sendChat("rules | theme | wiki | link | define | songlink | download | props | votes | djinfo | bot | ping | marco | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami ");
+                           API.sendChat("rules | theme | roomhelp | whywoot | whymeh | wiki | link | define | songlink | download | props | votes | djinfo | bot | ping | marco | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami");
                         }, 650);
                         setTimeout(function(){
                            API.sendChat("test | join | leave | woot | meh | skip | tcf | trf | tsf | tbf | version | lock | unlock | lockskip | save | cancel | source | status | cooldown | maxlength");

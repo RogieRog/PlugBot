@@ -439,7 +439,7 @@ botMethods.djAdvanceEvent = function(data){
                            API.sendChat("rules | theme | roomhelp | whywoot | whymeh | wiki | link | define | songlink | download | props | votes | djinfo | bot | ping | marco | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami");
                         }, 650);
                         setTimeout(function(){
-                           API.sendChat("test | join | leave | woot | meh | skip | tcf | trf | tsf | tbf | version | lock | unlock | lockskip | save | cancel | source | status | cooldown | maxlength");
+                           API.sendChat("test | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
                         }, 1000);
                         }
                     }

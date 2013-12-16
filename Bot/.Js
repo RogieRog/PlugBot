@@ -404,7 +404,7 @@ botMethods.djAdvanceEvent = function(data){
                     command[1] = command[1] + ' ' + command[i];
                 }
             }
-            if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(data.fromID).permission > 1 || API.getUser(fromID).permission < 2){
+            if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(data.fromID).permission > 1){
                 switch(command[0].toLowerCase()){
  
                     case "votes":
@@ -414,10 +414,27 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
+                    
+                    case "facebook":
+                    case "fb":
+                        if(API.getUser(fromID).permission < 2 || mubBot.admins.indexOf(fromID) > -1){
+                            API.sendChat(data.from +" I Bet you're cute or handsome! Please join our facebook group here: http://goo.gl/6EeDZG");
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
                
                     case "djinfo":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             API.sendChat("Current dj is: "+ API.getDJ().username +". Points: "+ total +" | Fans: "+API.getDJ().fans+" | Curated: "+ API.getDJ().curatorPoints +".");
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "roominfo":
+                        if(API.getUser(fromID).permission < 2 || mubBot.admins.indexOf(fromID) > -1){
+                            API.sendChat("Welcome to The Country Club! Get to meet our Host: "+ API.getHost().username +". We play mostly Country, Southern Rock, & Folk. Please don't forget to visit our facebook page: http://goo.gl/6EeDZG");
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }

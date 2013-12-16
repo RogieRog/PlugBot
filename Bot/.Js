@@ -501,11 +501,11 @@ botMethods.djAdvanceEvent = function(data){
  
                     case "theme":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Country, Southern Rock, and Folk");
+                            API.sendChat("Themes: Country, Southern Rock, and Folk");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Country, Southern Rock, and Folk");
+                            API.sendChat(command[1]+" Theme: Country, Southern Rock, and Folk");
                         }else{
-                            API.sendChat("Country, Southern Rock, and Folk");
+                            API.sendChat("Themes: Country, Southern Rock, and Folk");
                         }
                         if(Countrybot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             Countrybot.misc.ready = false;

@@ -432,7 +432,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "commands":
-                        if(typeof command[1] === "undefined"){
+                        if(API.getUser(fromID).permission < 2 || mubBot.admins.indexOf(fromID) > -1){
                            API.sendChat(".{command} mention is included");
                         setTimeout(function(){
                            API.sendChat("rules | theme | roomhelp | whywoot | whymeh | wiki | link | define | songlink | download | props | votes | djinfo | bot | ping | marco | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami");
@@ -440,7 +440,9 @@ botMethods.djAdvanceEvent = function(data){
                         setTimeout(function(){
                            API.sendChat("test | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
                         }, 1000);
-                      }
+                        mubBot.misc.ready = false;
+                        setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
                         break;
  
                     case "whoami":

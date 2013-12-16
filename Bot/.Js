@@ -432,7 +432,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "commands":
-                        if(API.getUser(fromID).permission < 2 || mubBot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
                            API.sendChat(".{command} mention is included");
                         setTimeout(function(){
                            API.sendChat("rules | theme | roomhelp | whywoot | whymeh | wiki | link | define | songlink | download | props | votes | djinfo | bot | ping | marco | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami");

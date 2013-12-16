@@ -14,7 +14,7 @@ BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAM
 RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-[note] DO NOT USE THIS SCRIPT, THIS SCRIPT IS FOR Hip-Hop TurnTabe ONLY!
+[note] DO NOT USE THIS SCRIPT, THIS SCRIPT IS FOR THE COUNTRY CLUB ONLY!
 
  * @Author:    Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL (Member. on Plug.dj)
  * @Member:    Rogie (Owner. of The Country Club)
@@ -54,7 +54,8 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMAN
 - Lock booth
 - Skips the current dj
 - unlocks booth
-- dogfacts and catfacts 
+- dogfacts and catfacts
+- Links our the facebook group page
 
 
 More futures will be made.

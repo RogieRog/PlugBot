@@ -55,7 +55,7 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMAN
 - Skips the current dj
 - unlocks booth
 - dogfacts and catfacts
-- Links our the facebook group page
+- Links out our facebook group page
 
 
 More futures will be made.

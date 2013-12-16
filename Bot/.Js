@@ -282,7 +282,7 @@ API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-API.sendChat("Welcome to The Country Music @"+ user.username +"!");
+API.sendChat("Welcome to The Country Club @"+ user.username +"!");
 }
  
 API.on(API.DJ_ADVANCE, DJ);

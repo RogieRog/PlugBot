@@ -441,7 +441,7 @@ botMethods.djAdvanceEvent = function(data){
  
                     case "bot":
                         if(API.getUser(fromID).permission < 2 || mubBot.admins.indexOf(fromID) > -1){
-                            API.sendChat("What faggot? @"+ data.from);
+                            API.sendChat("You have something to say? @"+ data.from);
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
@@ -609,7 +609,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(typeof command[1] == "undefined"){
                             API.sendChat("@" + data.from + " Define what?!");
                         }else if(command[1].toLowerCase().indexOf("xxx") === -1 && command[1].toLowerCase().indexOf("porn") === -1 && command[1].toLowerCase().indexOf("sex") === -1){
-                            API.sendChat("@"+ data.from +" http://www.urbandictionary.com/define.php?term="+command[1]);
+                            API.sendChat("@"+ data.from +" http://www.merriam-webster.com/dictionary/"+command[1]);
                         }else{
                             API.sendChat("@"+ data.from +" What are you an idiot?");
                         }

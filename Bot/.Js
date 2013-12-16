@@ -49,7 +49,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
  
-Countrybot.misc.version = "1.0.9";
+Countrybot.misc.version = "1.0.10";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -85,7 +85,7 @@ Countrybot.filters.swearWords = ["slut","mofo","penis","penus","fuck","shit","bi
  
 Countrybot.filters.commandWords = [".say",".catfact",".dogfact",".fortune",".songlink",".commands",".bansong 1",".down",".join",".woot",".meh",".status",".tcf",".cf",".rules",".version",".test",".cancel",".test",".source"];
  
-Countrybot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jockey","towelhead","towel head","chink","gook","porch monkey","cracker","Coolie","nigga","nigguh","black shit","black monkey","you ape","you monkey","you gorilla","black ass","assnigger","honkey","White bread","white ass","jungle bunny","niglet","nigaboo","paki","ruski","sand nigger","sandnigger","wetback","wet back"];
+Countrybot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jockey","towelhead","towel head","chink","gook","porch monkey","Coolie","nigga","nigguh","black shit","black monkey","you ape","you monkey","you gorilla","black ass","assnigger","honkey","White bread","white ass","jungle bunny","niglet","nigaboo","paki","ruski","sand nigger","sandnigger","wetback","wet back"];
  
 Countrybot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
  

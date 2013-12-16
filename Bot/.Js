@@ -440,7 +440,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
  
                     case "bot":
-                        if(API.getUser(fromID).permission < 2 || Countrybot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
                             API.sendChat("You have something to say?? @"+ data.from);
                             Countrybot.misc.ready = false;
                             setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);

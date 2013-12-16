@@ -24,9 +24,7 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMAN
 
 ### What does this bot do ###
 
-- Checks history
 - Mod commands and User commands (Admins included)
-- Spams chat (If UnAthorized User is using this script)
 - Filter bad words
 - Gives hugs    (Fun Command)
 - Gives weeds   (Fun Command)
@@ -37,7 +35,6 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMAN
 - Helps put up link
 - Announces who Grab song
 - Greets the Joiners
-- Automatically woots (if script is function)
 - Gives out current song's link
 - Filters Bad | Racism | Fan beggin (deletes chat)
 - Alerts users that Fan begging is not allowed.

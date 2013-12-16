@@ -534,12 +534,12 @@ botMethods.djAdvanceEvent = function(data){
  
                     case "roomhelp":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Welcome to the The Country Club! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music. Most Hip Hip music allowed.");
+                            API.sendChat("Welcome to the The Country Club! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music.");
                                 setTimeout(function(){
                             API.sendChat("Ask a mod if you're unsure about your song choice.");
                          }, 650);
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+ "Welcome to the The Country Club! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music. Most Hip Hop music is allowed.");
+                            API.sendChat(command[1]+ "Welcome to the The Country Club! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music.");
                                 setTimeout(function(){
                             API.sendChat("Ask a mod if you're unsure about your song choice.");
                          }, 650);

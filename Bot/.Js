@@ -364,7 +364,7 @@ botMethods.cleanString = function(string){
  
 botMethods.djAdvanceEvent = function(data){
     clearTimeout(Countrybot.pubVars.skipOnExceed);
-    if(mubBot.misc.lockSkipping){
+    if(Countrybot.misc.lockSkipping){
         API.moderateAddDJ(Countrybot.misc.lockSkipped);
         Countrybot.misc.lockSkipped = "0";
         Countrybot.misc.lockSkipping = false;

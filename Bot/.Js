@@ -80,8 +80,8 @@ Countrybot.settings.ruleSkip = true;
 Countrybot.settings.removedFilter = true;
 
 
-//Admins                        [NEON]                      [Rogie]                    [RedNeck]                   [minellium]
-Countrybot.admins = ["50aeaeb6c3b97a2cb4c25bd2","50b3dd0d3e083e26dbef9319","51c49679877b9263732212c7","5293525e96fba53bee4179e5"];
+//Admins                        [NEON]                      [Rogie]                    [RedNeck]                   [minellium]               [Jovi]
+Countrybot.admins = ["50aeaeb6c3b97a2cb4c25bd2","50b3dd0d3e083e26dbef9319","51c49679877b9263732212c7","5293525e96fba53bee4179e5","50b3e11a877b9228b4cf2527"];
  
 Countrybot.filters.swearWords = ["slut","mofo","penis","penus","fuck","shit","bitch","cunt","twat","faggot","queer","dumb ass","pussy","dick","cocksucker","asshole","vagina","tit","mangina","tits","cock","jerk","puta","puto","cum","sperm","ass-hat","ass-jabber","assbanger","assfuck","assfucker","assnigger","butt plug","bollox","blowJob","Blow job","bampot","cameltoe","chode","clitfuck","cunt","dildo","douche","doochbag","dike","dyke","fatass","fat ass","fuckass","fuckbag","fuckboy","fuckbrain","gay","gaylord","handjob","hoe","Jizz","jerk off","kunt","lesbian","lesbo","lezzie","minge","munging","nut sack","nutsack","queer","queef","rimjob","scrote","schlong","titfuck","twat","unclefucker","va-j-j","vajayjay","vjayjay","wankjob","whore"];
  

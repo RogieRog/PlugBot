@@ -454,7 +454,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
                            API.sendChat(".{command} mention is included");
                         setTimeout(function(){
-                           API.sendChat("rules | theme | roominfo | roomhelp | whywoot | whymeh | wiki | link | facebook | define | songlink | download | props | votes | djinfo | bot | ping | marco | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami");
+                           API.sendChat("rules | themes | roominfo | roomhelp | whywoot | whymeh | wiki | link | facebook | define | songlink | download | props | votes | djinfo | bot | ping | marco | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami");
                         }, 650);
                         setTimeout(function(){
                            API.sendChat("test | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
@@ -502,7 +502,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
  
-                    case "theme":
+                    case "themes":
                         if(typeof command[1] == "undefined"){
                             API.sendChat("Themes: Country, Southern Rock, and Folk");
                         }else if(command[1].indexOf("@") > -1){
@@ -1251,7 +1251,10 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 3);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
+                                    API.sendChat("@"+crowd[randomUser].username+" Want a cookie little boy?");
+                                    setTimeout(function(){
+                                        API.sendChat("Gives Cookies to @"+crowd[randomUser].username+", Enjoy! :trollface:");
+                                    }, 650);
                                     break;
                                 case 1:
                                     API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
@@ -1269,7 +1272,10 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 3);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
+                                    API.sendChat("@"+crowd[randomUser].username+" Want a cookie little boy?");
+                                    setTimeout(function(){
+                                        API.sendChat("Gives Cookies to @"+crowd[randomUser].username+", Enjoy! :trollface:");
+                                    }, 650);
                                     break;
                                 case 1:
                                     API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie] + ". Enjoy!");

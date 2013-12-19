@@ -67,8 +67,8 @@ Countrybot.filters.commandWords = new Array();
 Countrybot.filters.racistWords = new Array();
 Countrybot.filters.beggerWords = new Array();
  
-Countrybot.settings.maxLength = 10; //minutes
-Countrybot.settings.cooldown = 10; //seconds
+Countrybot.settings.maxLength = 10; 
+Countrybot.settings.cooldown = 10; 
 Countrybot.settings.staffMeansAccess = true;
 Countrybot.settings.historyFilter = true;
 Countrybot.settings.swearFilter = true;

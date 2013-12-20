@@ -104,7 +104,7 @@ Countrybot.misc.rog = [ 'Roger The Jawa! is the greatest!', 'Have I ever told yo
 Countrybot.misc.jovi = [ 'Your local friendly TT super...', 'Jovi knows, so be careful!', 'Hes super!' ];
 Countrybot.misc.banjo = [ 'Paddle faster!!!!', 'Wanna see my resonator?', 'You play a mean banjo!', 'Jeff is the BESTO!', 'http://cdn.meme.li/i/ox1dg.jpg' ];
 Countrybot.misc.redneck = [
-"You just might be a Redneck if: You've ever tried to drown a fish.",
+  "You just might be a Redneck if: You've ever tried to drown a fish.",
   "You just might be a Redneck if: You can yell to your mom, 'Hey, Aunt Betty!'",
   "You just might be a Redneck if: Your kids fight with the dogs for their dinner.",
   "You just might be a Redneck if: You've ever stood in line to have your picture taken with a freak of nature.",
@@ -154,7 +154,7 @@ Countrybot.misc.redneck = [
 
 Countrybot.misc.ht = ["My magic coins says: Tails", "My magic coin says: Heads"];
 Countrybot.misc.roll = [
-"You rolled A 1. Bummer :(",
+  "You rolled A 1. Bummer :(",
   "You rolled A 2.Bummer :(",
   "You rolled A 3. Bummer :(",
   "You rolled A 4. Awesome!",
@@ -486,10 +486,10 @@ API.on(API.CHAT, function(data){
           if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
             API.sendChat(".{command} mention is included");
             setTimeout(function(){
-              API.sendChat("rules | themes | roominfo | roomhelp | whywoot | whymeh | wiki | link | facebook | define | songlink | download | props | votes | djinfo | bot | ping | marco | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | whoami");
+              API.sendChat("rules | themes | roominfo | roomhelp | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| rog | jovi | banjo | redneck | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props");
             }, 650);
             setTimeout(function(){
-              API.sendChat("test | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
+              API.sendChat("test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
             }, 1000);
             Countrybot.misc.ready = false;
             setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);

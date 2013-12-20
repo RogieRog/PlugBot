@@ -49,7 +49,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
  
-Countrybot.misc.version = "1.0.16";
+Countrybot.misc.version = "1.0.17";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -100,6 +100,36 @@ Countrybot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatme
 
 Countrybot.misc.drink = ["13 jello shots", "a cold PBR", "an egg nog spike with some bourbon", "a martini, you snob", "a forty of Ole English", "a 6 pack of my finest"];
  
+Countrybot.misc.rog = [ 'Roger The Jawa! is the greatest!', 'Have I ever told you how awesome Roger The Jawa! is?', 'Utinni!' ];
+Countrybot.misc.jovi = [ 'Your local friendly TT super...', 'Jovi knows, so be careful!', 'Hes super!' ];
+Countrybot.misc.banjo = [ 'Paddle faster!!!!', 'Wanna see my resonator?', 'You play a mean banjo!', 'Jeff is the BESTO!', 'http://cdn.meme.li/i/ox1dg.jpg' ];
+Countrybot.misc.redneck = [
+"You just might be a Redneck if: You've ever tried to drown a fish.",
+"You just might be a Redneck if: You can yell to your mom, 'Hey, Aunt Betty!'",
+"You just might be a Redneck if: Your kids fight with the dogs for their dinner.",
+"You just might be a Redneck if: You've ever stood in line to have your picture taken with a freak of nature.",
+"You just might be a Redneck if: More than one living relative is named after a Southern Civil War general.",
+"You just might be a Redneck if: Your boat has not left the driveway in 15 years.",
+"You just might be a Redneck if: Your mother has been involved in a fist-fight at a high school sports event.",
+"You just might be a Redneck if: None of your shirts cover your stomach.",
+"You just might be a Redneck if: You consider a six-pack and a bug-zapper high-quality entertainment.",
+"You just might be a Redneck if: You've ever been kicked out of the zoo for heckling the monkeys.",
+"You just might be a Redneck if: You've ever bathed with flea and tick soap.",
+"You just might be a Redneck if: Your family tree does not fork.",
+"You just might be a Redneck if: Your baby's first words are 'Attention K-Mart shoppers.'",
+"You just might be a Redneck if: You have a Hefty Bag for a passenger-side window.",
+"You just might be a Redneck if: The fifth grade is referred to as ' your senior year. '",
+"You just might be a Redneck if: Three quarters of the clothes you own have logos on them.",
+"You just might be a Redneck if: Your gene pool doesn't have a 'deep end.'",
+"You just might be a Redneck if: You have the taxidermist's number on speed-dial.",
+"You just might be a Redneck if: Your dog and your wallet are both on a chain.",
+"You just might be a Redneck if: The UFO hotline limits you to one call per day.",
+"You just might be a Redneck if: Your two-year-old has more teeth than you do.",
+"You just might be a Redneck if: You have ever been accused of lying through your tooth.",
+"You just might be a Redneck if: Your underwear doubles as your bathing suit.",
+"You just might be a Redneck if: You let you kid pee in the parking lot at K-Mart."
+];
+
 Countrybot.misc.ball = [
 " It is certain",
 " It is decidedly so",
@@ -1507,6 +1537,142 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
                         }
                         break;
+
+                    case "rog":
+                        if(typeof command[1] == "undefined"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomRog = Math.floor(Math.random() * Countrybot.misc.rog.length);
+                            var randomSentence = Math.floor(Math.random() * 1);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.rog[randomRog]);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.rog[randomRog]);
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomRog = Math.floor(Math.random() * Countrybot.misc.rog.length);
+                            var randomSentence = Math.floor(Math.random() * 1);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.rog[randomRog]);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.rog[randomRog]);
+                                    break;
+                           }
+                        }
+                        if(Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            Countrybot.misc.ready = false;
+                            setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
+                        }
+                        break;
+
+                    case "jovi":
+                        if(typeof command[1] == "undefined"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomJovi = Math.floor(Math.random() * Countrybot.misc.jovi.length);
+                            var randomSentence = Math.floor(Math.random() * 1);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.jovi[randomJovi]);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.jovi[randomJovi]);
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomJovi = Math.floor(Math.random() * Countrybot.misc.jovi.length);
+                            var randomSentence = Math.floor(Math.random() * 1);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.jovi[randomJovi]);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.jovi[randomJovi]);
+                                    break;
+                           }
+                        }
+                        if(Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            Countrybot.misc.ready = false;
+                            setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
+                        }
+                        break;
+
+                    case "banjo":
+                        if(typeof command[1] == "undefined"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomBanjo = Math.floor(Math.random() * Countrybot.misc.banjo.length);
+                            var randomSentence = Math.floor(Math.random() * 1);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.banjo[randomBanjo]);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.banjo[randomBanjo]);
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomBanjo = Math.floor(Math.random() * Countrybot.misc.banjo.length);
+                            var randomSentence = Math.floor(Math.random() * 1);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.banjo[randomBanjo]);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.banjo[randomBanjo]);
+                                    break;
+                           }
+                        }
+                        if(Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            Countrybot.misc.ready = false;
+                            setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
+                        }
+                        break;
+
+                    case "redneck":
+                        if(typeof command[1] == "undefined"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomRedneck = Math.floor(Math.random() * Countrybot.misc.redneck.length);
+                            var randomSentence = Math.floor(Math.random() * 1);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.redneck[randomRedneck]);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.redneck[randomRedneck]);
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomRedneck = Math.floor(Math.random() * Countrybot.misc.redneck.length);
+                            var randomSentence = Math.floor(Math.random() * 1);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.redneck[randomRedneck]);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.redneck[randomRedneck]);
+                                    break;
+                           }
+                        }
+                        if(Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            Countrybot.misc.ready = false;
+                            setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
+                        }
+                        break;
+
+
+
+
                 }
             }
         }

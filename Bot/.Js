@@ -49,7 +49,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
 
-Countrybot.misc.version = "1.0.19";
+Countrybot.misc.version = "1.0.20";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -486,7 +486,7 @@ API.on(API.CHAT, function(data){
           if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
             API.sendChat(".{command} mention is included");
             setTimeout(function(){
-              API.sendChat("rules | themes | roominfo | roomhelp | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| rog | jovi | banjo | redneck | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props");
+              API.sendChat("rules | themes | roominfo | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| rog | jovi | banjo | redneck | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | drink");
             }, 650);
             setTimeout(function(){
               API.sendChat("test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
@@ -583,7 +583,7 @@ API.on(API.CHAT, function(data){
           }
           break;
 
-        case "roomhelp":
+        case "help":
           if(typeof command[1] == "undefined"){
             API.sendChat("Welcome to the The Country Club! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music.");
             setTimeout(function(){

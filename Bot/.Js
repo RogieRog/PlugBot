@@ -49,7 +49,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
  
-Countrybot.misc.version = "1.0.17";
+Countrybot.misc.version = "1.0.18";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -1546,10 +1546,10 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.rog[randomRog]);
+                                    API.sendChat(Countrybot.misc.rog[randomRog]);
                                     break;
                                 case 1:
-                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.rog[randomRog]);
+                                    API.sendChat(Countrybot.misc.rog[randomRog]);
                                     break;
                             }
                         }else{
@@ -1558,10 +1558,10 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.rog[randomRog]);
+                                    API.sendChat(Countrybot.misc.rog[randomRog]);
                                     break;
                                 case 1:
-                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.rog[randomRog]);
+                                    API.sendChat(Countrybot.misc.rog[randomRog]);
                                     break;
                            }
                         }
@@ -1579,10 +1579,10 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.jovi[randomJovi]);
+                                    API.sendChat(Countrybot.misc.jovi[randomJovi]);
                                     break;
                                 case 1:
-                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.jovi[randomJovi]);
+                                    API.sendChat(Countrybot.misc.jovi[randomJovi]);
                                     break;
                             }
                         }else{
@@ -1591,10 +1591,10 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.jovi[randomJovi]);
+                                    API.sendChat(Countrybot.misc.jovi[randomJovi]);
                                     break;
                                 case 1:
-                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.jovi[randomJovi]);
+                                    API.sendChat(Countrybot.misc.jovi[randomJovi]);
                                     break;
                            }
                         }

@@ -31,7 +31,7 @@
  * WAS WRITTEN BY IT'S RIGHTFUL OWNER: DJ NOEN)
  *
  * @Author:    Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL (Member. on Plug.dj)
- * @Member:    RogieRog (Owner. of The Country Club)
+ * @Author:    RogieRog (Owner. of The Country Club)
  *
  */
 
@@ -162,7 +162,7 @@ Countrybot.misc.roll = [
   "You rolled A 6. Awesome!"];
 
 Countrybot.misc.catfact = [
-"Cats have five toes on each front paw, but only four toes on each back paw.","Cats have true fur, in that they have both an undercoat and an outer coat.",
+  "Cats have five toes on each front paw, but only four toes on each back paw.","Cats have true fur, in that they have both an undercoat and an outer coat.",
   "Newborn kittens have closed ear canals that don''t begin to open for nine days.When the eyes open, they are always blue at first. They change color over a period of months to the final eye color.",
   "Most cats have no eyelashes.","A cat cannot see directly under its nose.",
   "You can tell a cat's mood by looking into its eyes. A frightened or excited cat will have large, round pupils. An angry cat will have narrow pupils. The pupil size is related as much to the cat's emotions as to the degree of light.",
@@ -210,7 +210,7 @@ Countrybot.misc.catfact = [
   "Cat families usually play best in even numbers. Cats and kittens should be acquired in pairs whenever possible."];
 
 Countrybot.misc.dogfact = [
-"Three dogs (from First Class cabins!) survived the sinking of the Titanic – two Pomeranians and one Pekingese.",
+  "Three dogs (from First Class cabins!) survived the sinking of the Titanic – two Pomeranians and one Pekingese.",
   "It’s rumored that, at the end of the Beatles song, A Day in the Life, Paul McCartney recorded an ultrasonic whistle, audible only to dogs, just for his Shetland sheepdog.",
   "Puppies have 28 teeth and normal adult dogs have 42.",
   "Dogs chase their tails for a variety of reasons: curiosity, exercise, anxiety, predatory instinct or, they might have fleas! If your dog is chasing his tail excessively, talk with your vet.",
@@ -242,7 +242,7 @@ Countrybot.misc.dogfact = [
   "Seeing eye dogs pee and poo on command so that their owners can clean up after them."];
 
 Countrybot.misc.fortune = [
-" There is a true and sincere friendship between you and your friends.",
+  " There is a true and sincere friendship between you and your friends.",
   " You find beauty in ordinary things, do not lose this ability.",
   " Ideas are like children; there are none so wonderful as your own.",
   " It takes more than good memory to have good memories.",

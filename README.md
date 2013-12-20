@@ -28,6 +28,7 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMAN
 - Filter bad words
 - Gives hugs    (Fun Command)
 - Gives weeds   (Fun Command)
+- Gives drink   (Fun Command)
 - Gives rewards (Fun Command)
 - Gives current songlink
 - Limits songs length

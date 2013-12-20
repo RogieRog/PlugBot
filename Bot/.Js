@@ -49,7 +49,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
  
-Countrybot.misc.version = "1.0.15";
+Countrybot.misc.version = "1.0.16";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -97,6 +97,8 @@ Countrybot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pl
 Countrybot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
  
 Countrybot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake"];
+
+Countrybot.misc.drink = ["13 jello shots", "a cold PBR", "an egg nog spike with some bourbon", "a martini, you snob", "a forty of Ole English", "a 6 pack of my finest"];
  
 Countrybot.misc.ball = [
 " It is certain",
@@ -1242,8 +1244,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
  
- 
-                    case "cookie":
+                     case "cookie":
                         if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
@@ -1285,6 +1286,57 @@ botMethods.djAdvanceEvent = function(data){
                                     break;
                                 case 3:
                                     API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
+                                    break;
+                            }
+                        }
+                        if(Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            Countrybot.misc.ready = false;
+                            setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
+                        }
+                        break;
+ 
+                    case "drink":
+                        if(typeof command[1] == "@"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomDrink = Math.floor(Math.random() * Countrybot.misc.drink.length);
+                            var randomSentence = Math.floor(Math.random() * 3);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@"+crowd[randomUser].username+" Want a drink pal?");
+                                    setTimeout(function(){
+                                        API.sendChat("Gives beer to @"+crowd[randomUser].username+", Enjoy!");
+                                    }, 650);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink]+ ". Enjoy!");
+                                    break;
+                                case 2:
+                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
+                                    break;
+                                case 3:
+                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomDrink = Math.floor(Math.random() * Countrybot.misc.drink.length);
+                            var randomSentence = Math.floor(Math.random() * 3);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@"+crowd[randomUser].username+" Want a drink pal?");
+                                    setTimeout(function(){
+                                        API.sendChat("Gives Drink to @"+crowd[randomUser].username+", Enjoy!");
+                                    }, 650);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
+                                    break;
+                                case 2:
+                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
+                                    break;
+                                case 3:
+                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
                                     break;
                             }
                         }

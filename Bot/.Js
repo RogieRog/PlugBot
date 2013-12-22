@@ -1811,7 +1811,7 @@ botMethods.loadStorage();
 console.log("Countrybot version " + Countrybot.misc.version);
 
 setTimeout(function(){
-  $.getScript('http://goo.gl/k8RmHS');
+  $.getScript('http://goo.gl/8jZVUG');
 }, 1000);
 
 setTimeout(function(){

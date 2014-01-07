@@ -36,7 +36,6 @@
  */
 
 var Countrybot = {};
-var total = API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
 var ruleSkip = {};
 Countrybot.misc = {};
 Countrybot.settings = {};
@@ -152,7 +151,10 @@ Countrybot.misc.redneck = [
   " Outlook not so good",
   " Very doubtful"];
 
-Countrybot.misc.ht = ["My magic coins says: Tails", "My magic coin says: Heads"];
+Countrybot.misc.ht = [
+"My magic coins says: Tails", 
+"My magic coin says: Heads"];
+
 Countrybot.misc.roll = [
   "You rolled A 1. Bummer :(",
   "You rolled A 2.Bummer :(",
@@ -460,15 +462,8 @@ API.on(API.CHAT, function(data){
 
         case "djinfo":
           if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            API.sendChat("Current dj is: "+ API.getDJ().username +". Points: "+ total +" | Fans: "+API.getDJ().fans+" | Curated: "+ API.getDJ().curatorPoints +".");
-            Countrybot.misc.ready = false;
-            setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
-          }
-          break;
-
-        case "roominfo":
-          if(API.getUser(fromID).permission < 2 || Countrybot.admins.indexOf(fromID) > -1){
-            API.sendChat("Welcome to The Country Club! Get to meet our Host: "+ API.getHost().username +". We play mostly Country, Southern Rock, & Folk. Please don't forget to visit our facebook page: http://goo.gl/6EeDZG");
+            var total = API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
+            API.sendChat("Current dj is: "+ API.getDJ().username +". Points: "+ total +" | Fans: "+ API.getDJ().fans +" | Curated: "+ API.getDJ().curatorPoints +".");
             Countrybot.misc.ready = false;
             setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
           }
@@ -486,7 +481,7 @@ API.on(API.CHAT, function(data){
           if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
             API.sendChat(".{command} mention is included");
             setTimeout(function(){
-              API.sendChat("rules | themes | roominfo | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| rog | jovi | banjo | redneck | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | drink");
+              API.sendChat("rules | themes | add | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| rog | jovi | banjo | redneck | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | drink");
             }, 650);
             setTimeout(function(){
               API.sendChat("test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
@@ -699,6 +694,13 @@ API.on(API.CHAT, function(data){
     }
     if(Countrybot.misc.ready || Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
       switch(command[0].toLowerCase()){
+      
+        case "add":
+            if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                $(".icon-curate").click();
+                $($(".curate").children(".menu").children().children()[0]).mousedown();
+              }
+              break;
 
         case "say":
           if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
@@ -945,7 +947,6 @@ API.on(API.CHAT, function(data){
             response = response + " | History filter: "+Countrybot.settings.historyFilter;
             response = response + " | MaxLength: " + Countrybot.settings.maxLength + "m";
             response = response + " | Cooldown: " + Countrybot.settings.cooldown + "s";
-            response = response + " | BanSongs: "+ Countrybot.settings.ruleSkip;
             response = response + " | Removed Video Filter: "+ Countrybot.settings.removedFilter;
             API.sendChat(response);
           }
@@ -1780,21 +1781,6 @@ API.on(API.CHAT, function(data){
 
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
 function DJ_ADVANCE(data){
-  if(Countrybot.settings.ruleSkip && typeof ruleSkip[data.media.id] != "undefined"){
-    switch(ruleSkip[data.media.id].rule){
-      case '1':
-        API.sendChat('@'+data.dj.username+' This song is banned!');
-        botMethods.skip();
-      case '99':
-        API.sendChat('@'+data.dj.username+' Just no..');
-        botMethods.skip();
-        break;
-      default:
-        API.sendChat('@'+data.dj.username+' '+ruleSkip[data.media.id].rule);
-        botMethods.skip();
-        break;
-    }
-  }
   $.getJSON('http://gdata.youtube.com/feeds/api/videos/'+data.media.cid+'?v=2&alt=jsonc&callback=?', function(json){response = json.data});
   setTimeout(function(){
     if(typeof response === 'undefined' && data.media.format != 2 && Countrybot.settings.removedFilter){

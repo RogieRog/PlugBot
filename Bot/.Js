@@ -1748,9 +1748,12 @@ API.on(API.CHAT, function(data){
       API.moderateDeleteChat(chatID);
     }
   }
-  for(var i = 0; i < Countrybot.filters.beggerWords.length; i++){
-    if(msg.indexOf(Countrybot.filters.beggerWords[i].toLowerCase()) > -1 && Countrybot.settings.beggerFilter){
-      API.moderateDeleteChat(chatID);
+  for(var i = 0; i < mubBot.filters.beggerWords.length; i++){
+      if(msg.indexOf(mubBot.filters.beggerWords[i].toLowerCase()) > -1 && mubBot.settings.beggerFilter){
+        API.moderateDeleteChat(chatID);
+      responses = ["Good idea @{beggar}!  Don't earn your fans or anything thats so yesterday", "Guys @{beggar} asked us to fan him!  Lets all totally do it! ಠ_ಠ", "srsly @{beggar}? ಠ_ಠ", "@{beggar}.  Earning his fans the good old fashioned way.  Hard work and elbow grease.  A true american."];
+      r = Math.floor(Math.random() * responses.length);
+        API.sendChat(responses[r].replace("{beggar}", data.from));
     }
   }
 

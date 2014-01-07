@@ -83,6 +83,8 @@ Countrybot.admins =
 //       [NEON]                      [Rogie]                    [RedNeck]                   [minellium]               [Jovi]
 ["50aeaeb6c3b97a2cb4c25bd2","50b3dd0d3e083e26dbef9319","51c49679877b9263732212c7","5293525e96fba53bee4179e5","50b3e11a877b9228b4cf2527"];
 
+// Filtering Chat Words below
+
 Countrybot.filters.swearWords = ["slut","mofo","penis","penus","fuck","shit","bitch","cunt","twat","faggot","queer","dumb ass","pussy","dick","cocksucker","asshole","vagina","tit","mangina","tits","cock","jerk","puta","puto","cum","sperm","ass-hat","ass-jabber","assbanger","assfuck","assfucker","assnigger","butt plug","bollox","blowJob","Blow job","bampot","cameltoe","chode","clitfuck","cunt","dildo","douche","doochbag","dike","dyke","fatass","fat ass","fuckass","fuckbag","fuckboy","fuckbrain","gay","gaylord","handjob","hoe","Jizz","jerk off","kunt","lesbian","lesbo","lezzie","minge","munging","nut sack","nutsack","queer","queef","rimjob","scrote","schlong","titfuck","twat","unclefucker","va-j-j","vajayjay","vjayjay","wankjob","whore"];
 
 Countrybot.filters.commandWords = [".say",".catfact",".dogfact",".fortune",".songlink",".commands",".bansong 1",".down",".join",".woot",".meh",".status",".tcf",".cf",".rules",".version",".test",".cancel",".test",".source"];
@@ -91,7 +93,7 @@ Countrybot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel j
 
 Countrybot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
 
-//Fun commands for misc below.
+// Filtering Fun Commands below
 
 Countrybot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
 
@@ -100,8 +102,11 @@ Countrybot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatme
 Countrybot.misc.drink = ["13 jello shots", "a cold PBR", "an egg nog spike with some bourbon", "a martini, you snob", "a forty of Ole English", "a 6 pack of my finest"];
 
 Countrybot.misc.rog = [ 'Roger The Jawa! is the greatest!', 'Have I ever told you how awesome Roger The Jawa! is?', 'Utinni!' ];
+
 Countrybot.misc.jovi = [ 'Your local friendly TT super...', 'Jovi knows, so be careful!', 'Hes super!' ];
+
 Countrybot.misc.banjo = [ 'Paddle faster!!!!', 'Wanna see my resonator?', 'You play a mean banjo!', 'Jeff is the BESTO!', 'http://cdn.meme.li/i/ox1dg.jpg' ];
+
 Countrybot.misc.redneck = [
   "You just might be a Redneck if: You've ever tried to drown a fish.",
   "You just might be a Redneck if: You can yell to your mom, 'Hey, Aunt Betty!'",

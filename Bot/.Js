@@ -317,24 +317,25 @@ Countrybot.misc.fortune = [
 Countrybot.pubVars.skipOnExceed;
 Countrybot.pubVars.command = false;
 
+var path = 'https://bitbucket.org/tawi05/plug-bot/raw/ef3b21631da5cd297949fc970710291bfae05092/javascripts/';
+
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
 
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
+
+var scriptFail = window.setTimeout(function() {
+    API.chatLog('Oops! An Error Occurred');
+  }, 2000);
+
+ 
+$.getScript(path + 'plug.su.js', function() {
+ window.clearTimeout(scriptFail);
+});
 
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
   API.sendChat("Welcome to The Country Club @"+ user.username +"!");
-}
-
-API.on(API.DJ_ADVANCE, DJ);
-function DJ(obj) {
-  if (obj == null) return;
-  var str = "";
-  var currentDJ = obj.dj;
-  str += currentDJ.username;
-  str += " Is now playing: " + obj.media.author + " - " + obj.media.title;
-  API.sendChat(str);
 }
 
 API.on(API.VOTE_SKIP, SKIP);

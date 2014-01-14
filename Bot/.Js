@@ -321,6 +321,10 @@ Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.l
 
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 
+var scriptFail = window.setTimeout(function() {
+    API.chatLog('Oops! An Error Occurred');
+  }, 2000);
+
 var path = 'http://pastebin.com/raw.php?i=';
 
 $.getScript(path + 'YjQSTGjX', function() {

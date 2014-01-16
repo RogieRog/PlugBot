@@ -1544,6 +1544,10 @@ API.on(API.CHAT, function(data){
           }
           break;
 
+        case "dougie":
+          API.sendChat("I don't do the dougie?");
+          break;
+
         case "diffie":
           API.sendChat("Joe, Joe, Joe Difffffffie");
           break;

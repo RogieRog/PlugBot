@@ -48,7 +48,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
 
-Countrybot.misc.version = "1.0.23";
+Countrybot.misc.version = "1.0.24";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -100,6 +100,18 @@ Countrybot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
 Countrybot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake"];
 
 Countrybot.misc.drink = ["13 jello shots", "a cold PBR", "an egg nog spike with some bourbon", "a martini, you snob", "a forty of Ole English", "a 6 pack of my finest"];
+
+Countrybot.misc.tswizzle = [
+  "http://youtu.be/LEdqn-Gtg-s?t=23s",
+  "http://www.dumpaday.com/wp-content/uploads/2013/01/breakup-taylor-swift-meme.jpg",
+  "http://1.bp.blogspot.com/-1vwpWloqjCY/UDJANvDdAKI/AAAAAAAANoM/UQsKau1o5Ws/s1600/Aaaand-its-gone-country.jpg",
+  "http://media.tumblr.com/tumblr_m7sr6gG4Ln1r8lhxo.gif",
+  "http://i258.photobucket.com/albums/hh253/jimifunguzz/taylor-gif-7.gif",
+  "http://24.media.tumblr.com/bb6654c9755afca23a4ddb3bf6945860/tumblr_mf7olnV9z01r3vsr3o1_500.jpg",
+  "http://images.cheezburger.com/completestore/2010/9/27/ad2a72e3-9d6b-4b47-92e2-d6d68988bafc.jpg",
+  "http://cf.chucklesnetwork.agj.co/items/1/3/2/2/7/3/so-are-you-telling-me-that-taylor-swift-isnt-bluegrass.jpg",
+  "http://assets.diylol.com/hfs/234/3a3/d07/resized/taylor-swift-meme-generator-i-sing-well-if-you-re-deaf-c0f3bd.jpg?1346752503.jpg"
+];
 
 Countrybot.misc.rog = [ 'Roger The Jawa! is the greatest!', 'Have I ever told you how awesome Roger The Jawa! is?', 'Utinni!' ];
 
@@ -486,7 +498,7 @@ API.on(API.CHAT, function(data){
           if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
             API.sendChat(".{command} mention is included");
             setTimeout(function(){
-              API.sendChat("rules | themes | add | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco | jive | diffie | rog | jovi | banjo | redneck | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | drink");
+              API.sendChat("rules | themes | add | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco | jive | tswizzle | dougie | diffie | rog | jovi | banjo | redneck | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | drink");
             }, 650);
             setTimeout(function(){
               API.sendChat("test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
@@ -1545,7 +1557,7 @@ API.on(API.CHAT, function(data){
           break;
 
         case "dougie":
-          API.sendChat("I don't do the dougie?");
+          API.sendChat("Ain't a damn one know how to do the dougie. No, not in Kentucky!");
           break;
 
         case "diffie":
@@ -1554,6 +1566,39 @@ API.on(API.CHAT, function(data){
 
         case "jive":
           API.sendChat("hello ladies");
+          break;
+
+        case "tswizzle":
+          if(typeof command[1] == "undefined"){
+            var crowd = API.getUsers();
+            var randomUser = Math.floor(Math.random() * crowd.length);
+            var randomTswizzle = Math.floor(Math.random() * Countrybot.misc.tswizzle.length);
+            var randomSentence = Math.floor(Math.random() * 1);
+            switch(randomSentence){
+              case 0:
+                API.sendChat(Countrybot.misc.tswizzle[randomTswizzle]);
+                break;
+              case 1:
+                API.sendChat(Countrybot.misc.tswizzle[randomTswizzle]);
+                break;
+            }
+          }else{
+            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+            var randomTswizzle = Math.floor(Math.random() * Countrybot.misc.tswizzle.length);
+            var randomSentence = Math.floor(Math.random() * 1);
+            switch(randomSentence){
+              case 0:
+                API.sendChat(Countrybot.misc.tswizzle[randomTswizzle]);
+                break;
+              case 1:
+                API.sendChat(Countrybot.misc.tswizzle[randomTswizzle]);
+                break;
+            }
+          }
+          if(Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+            Countrybot.misc.ready = false;
+            setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
+          }
           break;
 
         case "rog":

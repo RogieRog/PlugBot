@@ -48,7 +48,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
 
-Countrybot.misc.version = "1.0.24";
+Countrybot.misc.version = "1.0.25";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -498,7 +498,7 @@ API.on(API.CHAT, function(data){
           if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
             API.sendChat(".{command} mention is included");
             setTimeout(function(){
-              API.sendChat("rules | themes | add | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco | jive | tswizzle | dougie | diffie | rog | jovi | banjo | redneck | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | drink");
+              API.sendChat("rules | themes | add | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco | jive | tswizzle | mullet | dougie | diffie | rog | jovi | banjo | redneck | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | drink");
             }, 650);
             setTimeout(function(){
               API.sendChat("test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
@@ -1554,6 +1554,10 @@ API.on(API.CHAT, function(data){
             Countrybot.misc.ready = false;
             setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
           }
+          break;
+
+        case "mullet":
+          API.sendChat("Do you like my Tennessee Waterfall? It's business in the front, Party in the back!");
           break;
 
         case "dougie":

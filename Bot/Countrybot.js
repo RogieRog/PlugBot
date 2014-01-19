@@ -1841,7 +1841,7 @@ API.on(API.DJ_ADVANCE, DJ_ADVANCE);
 function DJ_ADVANCE(data){
   setTimeout(function(){
     if(typeof response === 'undefined' && data.media.format != 2 && Countrybot.settings.removedFilter){
-      API.sendChat('/me This video may be unavailable!!');
+      //API.sendChat('/me This video may be unavailable!!');
       //botMethods.skip();
     }
   }, 1500);

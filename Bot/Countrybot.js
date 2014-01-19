@@ -1862,7 +1862,7 @@ botMethods.loadStorage();
 console.log("Countrybot version " + Countrybot.misc.version);
 
 setTimeout(function(){
-  $.getScript('http://goo.gl/8jZVUG');
+  $.getScript('http://goo.gl/9vurzR');
 }, 1000);
 
 setTimeout(function(){

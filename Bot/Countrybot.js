@@ -354,7 +354,7 @@ function callback(obj)
 }
 
 function djAdvanceEvent(data){
-  setTimeout(function(){ botMethods.djAdvanceEvent(data); }, 500);
+    setTimeout(function(){ botMethods.data }, 500);
 }
 
 botMethods.skip = function(){
@@ -1839,7 +1839,6 @@ API.on(API.CHAT, function(data){
 
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
 function DJ_ADVANCE(data){
-  $.getJSON('http://gdata.youtube.com/feeds/api/videos/'+data.media.cid+'?v=2&alt=jsonc&callback=?', function(json){response = json.data});
   setTimeout(function(){
     if(typeof response === 'undefined' && data.media.format != 2 && Countrybot.settings.removedFilter){
       API.sendChat('/me This video may be unavailable!!');

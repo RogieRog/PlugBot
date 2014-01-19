@@ -48,7 +48,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
 
-Countrybot.misc.version = "1.0.27";
+Countrybot.misc.version = "1.0.28";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -332,16 +332,6 @@ Countrybot.pubVars.command = false;
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
 
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
-
-var scriptFail = window.setTimeout(function() {
-    API.chatLog('Oops! An Error Occurred');
-  }, 2000);
-
-var path = 'http://pastebin.com/raw.php?i=';
-
-$.getScript(path + 'YjQSTGjX', function() {
- window.clearTimeout(scriptFail);
-});
 
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)

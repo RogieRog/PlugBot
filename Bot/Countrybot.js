@@ -173,12 +173,14 @@ Countrybot.misc.ht = [
 "My magic coin says: Heads"];
 
 Countrybot.misc.roll = [
-  "You rolled A 1. Bummer :(",
-  "You rolled A 2.Bummer :(",
-  "You rolled A 3. Bummer :(",
-  "You rolled A 4. Awesome!",
-  "You rolled A 5. Awesome!",
-  "You rolled A 6. Awesome!"];
+" You rolled A 1. Bummer :(",
+" You rolled A 2. Bummer :(",
+" You rolled A 3. Bummer :("];
+
+Countrybot.misc.roll2 = [
+"4. Awesome!",
+"5. Awesome!",
+"6. Awesome!"];
 
 Countrybot.misc.catfact = [
   "Cats have five toes on each front paw, but only four toes on each back paw.","Cats have true fur, in that they have both an undercoat and an outer coat.",
@@ -1092,26 +1094,26 @@ API.on(API.CHAT, function(data){
             var randomSentence = Math.floor(Math.random() * 6);
             switch(randomSentence){
               case 0:
-                API.sendChat("/me rubs sandpaper on @"+botMethods.cleanString(command[1])+"'s scrotum");
+                API.sendChat("/me rubs sandpaper on @"+command[1]+"'s scrotum");
                 break;
               case 1:
-                API.sendChat("/me penetrates @"+botMethods.cleanString(command[1])+" with a sharpie");
+                API.sendChat("/me penetrates @"+command[1]+" with a sharpie");
                 break;
               case 2:
-                API.sendChat("/me pokes @"+botMethods.cleanString(command[1])+" in the eyes");
+                API.sendChat("/me pokes @"+command[1]+" in the eyes");
                 break;
               case 3:
-                API.sendChat("/me makes @"+botMethods.cleanString(command[1])+"'s mother cry");
+                API.sendChat("/me makes @"+command[1]+"'s mother cry");
                 break;
               case 4:
-                API.sendChat("/me pinches @"+botMethods.cleanString(command[1])+"'s nipples super hard");
+                API.sendChat("/me pinches @"+command[1]+"'s nipples super hard");
                 break;
               case 5:
-                API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a wet willy");
+                API.sendChat("/me gives @"+command[1]+" a wet willy");
                 break;
 
               case 6:
-                API.sendChat("/me Sets @"+botMethods.cleanString(command[1])+" hair on fire");
+                API.sendChat("/me Sets @"+command[1]+" hair on fire");
                 break;
             }
           }else{
@@ -1119,26 +1121,26 @@ API.on(API.CHAT, function(data){
             var randomSentence = Math.floor(Math.random() * 6);
             switch(randomSentence){
               case 0:
-                API.sendChat("/me rubs sandpaper on @"+botMethods.cleanString(command[1])+"'s scrotum");
+                API.sendChat("/me rubs sandpaper on @"+command[1]+"'s scrotum");
                 break;
               case 1:
-                API.sendChat("/me penetrates @"+botMethods.cleanString(command[1])+" with a sharpie");
+                API.sendChat("/me penetrates @"+command[1]+" with a sharpie");
                 break;
               case 2:
-                API.sendChat("/me pokes @"+botMethods.cleanString(command[1])+" in the eyes");
+                API.sendChat("/me pokes @"+command[1]+" in the eyes");
                 break;
               case 3:
-                API.sendChat("/me makes @"+botMethods.cleanString(command[1])+"'s mother cry");
+                API.sendChat("/me makes @"+command[1]+"'s mother cry");
                 break;
               case 4:
-                API.sendChat("/me pinches @"+botMethods.cleanString(command[1])+"'s nipples super hard");
+                API.sendChat("/me pinches @"+command[1]+"'s nipples super hard");
                 break;
               case 5:
-                API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a wet willy");
+                API.sendChat("/me gives @"+command[1]+" a wet willy");
                 break;
 
               case 6:
-                API.sendChat("/me Sets @"+botMethods.cleanString(command[1])+" hair on fire");
+                API.sendChat("/me Sets @"+command[1]+" hair on fire");
                 break;
             }
           }
@@ -1149,38 +1151,44 @@ API.on(API.CHAT, function(data){
           break;
 
 
-        case "roll":
-          if(typeof command[1] == "undefined"){
-            var crowd = API.getUsers();
-            var randomUser = Math.floor(Math.random() * crowd.length);
-            var randomRoll = Math.floor(Math.random() * Countrybot.misc.roll.length);
-            var randomSentence = Math.floor(Math.random() * 1);
-            switch(randomSentence){
-              case 0:
-                API.sendChat("@" + data.from + ","+ Countrybot.misc.roll[randomRoll]);
-                break;
-              case 1:
-                API.sendChat("@" + data.from + ","+ Countrybot.misc.roll[randomRoll]);
-                break;
-            }
-          }else{
-            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
-            var randomRoll = Math.floor(Math.random() * Countrybot.misc.roll.length);
-            var randomSentence = Math.floor(Math.random() * 1);
-            switch(randomSentence){
-              case 0:
-                API.sendChat("@" + data.from + ","+ Countrybot.misc.roll[randomRoll]);
-                break;
-              case 1:
-                API.sendChat("@" + data.from + ","+ Countrybot.misc.roll[randomRoll]);
-                break;
-            }
-          }
-          if(Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
-            Countrybot.misc.ready = false;
-            setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
-          }
-          break;
+                   case "roll":
+                        if(typeof command[1] == "undefined"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomRoll = Math.floor(Math.random() * Countrybot.misc.roll.length);
+                            var randomSentence = Math.floor(Math.random() * 2);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@"+ data.from +" You rolled a "+ Countrybot.misc.roll2[randomRoll]);
+                                    setTimeout(function(){
+                                    document.getElementById("woot").click()
+                                    }, 650);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.roll[randomRoll]);
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomRoll = Math.floor(Math.random() * Countrybot.misc.roll.length);
+                            var randomSentence = Math.floor(Math.random() * 2);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@"+ data.from +" You rolled a "+ Countrybot.misc.roll2[randomRoll]);
+                                    setTimeout(function(){
+                                    document.getElementById("woot").click()
+                                    }, 650);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Countrybot.misc.roll[randomRoll]);
+                                    break;
+                           }
+                        }
+                        if(Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            Countrybot.misc.ready = false;
+                            setTimeout(function(){ boombot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
+                        }
+                        break;
 
 
         case "fortune":
@@ -1282,7 +1290,8 @@ API.on(API.CHAT, function(data){
           }
           break;
 
-        case "cookie":
+      case "cookie":
+      case "reward":
           if(typeof command[1] == "@"){
             var crowd = API.getUsers();
             var randomUser = Math.floor(Math.random() * crowd.length);
@@ -1290,19 +1299,19 @@ API.on(API.CHAT, function(data){
             var randomSentence = Math.floor(Math.random() * 3);
             switch(randomSentence){
               case 0:
-                API.sendChat("@"+crowd[randomUser].username+" Want a cookie little boy?");
+                API.sendChat("@"+command[1]+" Want a cookie little boy?");
                 setTimeout(function(){
-                  API.sendChat("Gives Cookies to @"+crowd[randomUser].username+", Enjoy! :trollface:");
+                  API.sendChat("Gives Cookies to @"+command[1]+", Enjoy! :trollface:");
                 }, 650);
                 break;
               case 1:
-                API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
+                API.sendChat("@" +command[1]+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
                 break;
               case 2:
-                API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
+                API.sendChat("@" +command[1]+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
                 break;
               case 3:
-                API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
+                API.sendChat("@" +command[1]+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
                 break;
             }
           }else{
@@ -1313,17 +1322,17 @@ API.on(API.CHAT, function(data){
               case 0:
                 API.sendChat("@"+crowd[randomUser].username+" Want a cookie little boy?");
                 setTimeout(function(){
-                  API.sendChat("Gives Cookies to @"+crowd[randomUser].username+", Enjoy! :trollface:");
+                  API.sendChat("Gives Cookies to @"+command[1]+", Enjoy! :trollface:");
                 }, 650);
                 break;
               case 1:
-                API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie] + ". Enjoy!");
+                API.sendChat("@" +command[1]+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie] + ". Enjoy!");
                 break;
               case 2:
-                API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
+                API.sendChat("@" +command[1]+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
                 break;
               case 3:
-                API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
+                API.sendChat("@" +command[1]+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.cookie[randomCookie]+ ". Enjoy!");
                 break;
             }
           }
@@ -1338,43 +1347,37 @@ API.on(API.CHAT, function(data){
             var crowd = API.getUsers();
             var randomUser = Math.floor(Math.random() * crowd.length);
             var randomDrink = Math.floor(Math.random() * Countrybot.misc.drink.length);
-            var randomSentence = Math.floor(Math.random() * 3);
+            var randomSentence = Math.floor(Math.random() * 2);
             switch(randomSentence){
               case 0:
                 API.sendChat("@"+crowd[randomUser].username+" Want a drink pal?");
                 setTimeout(function(){
-                  API.sendChat("Gives beer to @"+crowd[randomUser].username+", Enjoy!");
+                  API.sendChat("Gives beer to @"+command[1]+", Enjoy!");
                 }, 650);
                 break;
               case 1:
-                API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink]+ ". Enjoy!");
+                API.sendChat("@" +command[1]+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink]+ ". Enjoy!");
                 break;
               case 2:
-                API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
+                API.sendChat("@" +command[1]+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
                 break;
               case 3:
-                API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
+                API.sendChat("@" +command[1]+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
                 break;
             }
           }else{
             if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
             var randomDrink = Math.floor(Math.random() * Countrybot.misc.drink.length);
-            var randomSentence = Math.floor(Math.random() * 3);
+            var randomSentence = Math.floor(Math.random() * 2);
             switch(randomSentence){
               case 0:
                 API.sendChat("@"+crowd[randomUser].username+" Want a drink pal?");
                 setTimeout(function(){
-                  API.sendChat("Gives Drink to @"+crowd[randomUser].username+", Enjoy!");
+                  API.sendChat("Gives Drink to @"+command[1]+", Enjoy!");
                 }, 650);
                 break;
               case 1:
-                API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
-                break;
-              case 2:
-                API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
-                break;
-              case 3:
-                API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
+                API.sendChat("@" +command[1]+ ", @" + data.from + " has rewarded you with " + Countrybot.misc.drink[randomDrink] + ". Enjoy!");
                 break;
             }
           }
@@ -1410,16 +1413,16 @@ API.on(API.CHAT, function(data){
             var randomSentence = Math.floor(Math.random() * 3);
             switch(randomSentence){
               case 0:
-                API.sendChat("@" + botMethods.cleanString(command[1]) + ", take this " + Countrybot.misc.tacos[randomTaco] + ", you bum!");
+                API.sendChat("@" + command[1] + ", take this " + Countrybot.misc.tacos[randomTaco] + ", you bum!");
                 break;
               case 1:
-                API.sendChat("@" + botMethods.cleanString(command[1]) + ", quickly! Smoke this " + Countrybot.misc.tacos[randomTaco] + " before I do!");
+                API.sendChat("@" + command[1] + ", quickly! Smoke this " + Countrybot.misc.tacos[randomTaco] + " before I do!");
                 break;
               case 2:
-                API.sendChat("One free " + Countrybot.misc.tacos[randomTaco] + " for you, @" + botMethods.cleanString(command[1]) + ".");
+                API.sendChat("One free " + Countrybot.misc.tacos[randomTaco] + " for you, @" + command[1] + ".");
                 break;
               case 3:
-                API.sendChat("/me throws a " + Countrybot.misc.tacos[randomTaco] + " at @" + botMethods.cleanString(command[1]) + "!");
+                API.sendChat("/me throws a " + Countrybot.misc.tacos[randomTaco] + " at @" + command[1] + "!");
                 break;
             }
           }
@@ -1438,17 +1441,17 @@ API.on(API.CHAT, function(data){
               case 0:
                 API.sendChat("Hugs? Forget that!");
                 setTimeout(function(){
-                  API.sendChat("/me grabs @"+crowd[randomUser].username+"'s ass");
+                  API.sendChat("/me grabs @"+command[1]+"'s ass");
                 }, 650);
                 break;
               case 1:
-                API.sendChat("/me gives @"+crowd[randomUser].username+" a big bear hug");
+                API.sendChat("/me gives @"+command[1]+" a big bear hug");
                 break;
               case 2:
-                API.sendChat("/me gives @"+crowd[randomUser].username+" a soft, furry hug");
+                API.sendChat("/me gives @"+command[1]+" a soft, furry hug");
                 break;
               case 3:
-                API.sendChat("/me gives @"+crowd[randomUser].username+" an awkward hug");
+                API.sendChat("/me gives @"+command[1]+" an awkward hug");
                 break;
             }
           }else{
@@ -1460,17 +1463,17 @@ API.on(API.CHAT, function(data){
               case 0:
                 API.sendChat("Hugs? Forget that!");
                 setTimeout(function(){
-                  API.sendChat("/me grabs @"+botMethods.cleanString(command[1])+"'s ass");
+                  API.sendChat("/me grabs @"+command[1]+"'s ass");
                 }, 650);
                 break;
               case 1:
-                API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a big bear hug");
+                API.sendChat("/me gives @"+command[1]+" a big bear hug");
                 break;
               case 2:
-                API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a soft, furry hug");
+                API.sendChat("/me gives @"+command[1]+" a soft, furry hug");
                 break;
               case 3:
-                API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" an awkward hug");
+                API.sendChat("/me gives @"+command[1]+" an awkward hug");
                 break;
             }
           }

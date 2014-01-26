@@ -1,5 +1,5 @@
 /*
-   Copyright (c) 2012-2013 by Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL
+   Copyright (c) 2014 - 2017 by Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL
 
    Permission to use this software for any purpose without fee is hereby granted, provided
    that the above copyright notice and this permission notice appear in all copies.

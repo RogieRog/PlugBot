@@ -29,10 +29,10 @@
 
  * @Author:    Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL (Member. on Plug.dj)
  * @Author:    RogieRog (Owner. of The Country Club)
- 
- 
- *    [NOTE]: THERE IS NOTHING HERE FOR YOU! COPYING THIS SCRIPT AND USING "IT" or "AS" 
- *    yours without Authors permission) WELL SERIOUSLY GET YOU TO FACE THE CONSEQUENCES!
+
+
+ * [NOTE]: THERE IS NOTHING HERE FOR YOU! COPYING THIS SCRIPT AND USING "IT" or "AS" 
+ * (yours without Authors permission) WELL SERIOUSLY GET YOU TO FACE THE CONSEQUENCES!
  *
  */
 

@@ -336,6 +336,11 @@ Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.l
 
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 
+API.on(API.DJ_ADVANCE, woot);
+function woot(){
+$('#woot').click();
+} 
+
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {

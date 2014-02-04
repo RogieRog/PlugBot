@@ -352,13 +352,12 @@ function SongStats(obj) {
   if (obj == null) return; // no dj
   var str = "";
   var currentDJ = obj.dj;
-  str += currentDJ.username;
-  var total = currentDJ.djPoints + currentDJ.listenerPoints + currentDJ.curatorPoints;
-  str += " points: " + total;
-  str += ", fans: " + currentDJ.fans;
-  str += " || " + obj.media.author + " - " + obj.media.title;
-  //alert(str);
-  API.sendChat(str);
+
+  if (currentDJ != '') {
+    str += currentDJ.username;
+    str += " played " + obj.media.author + " - " + obj.media.title;
+    API.sendChat(str);
+  }
 }
 
 API.on(API.VOTE_SKIP, SKIP);

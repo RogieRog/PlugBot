@@ -347,6 +347,16 @@ function UserJoin(user)
   API.sendChat("Welcome to The Country Club @"+ user.username +"!");
 }
 
+API.on(API.DJ_ADVANCE, DJ_ADVANCE);
+function DJ(obj) {
+  if (obj == null) return;
+  var str = "";
+  var currentDJ = obj.dj;
+  str += currentDJ.username;
+  str += " Is now playing: " + obj.media.author + " - " + obj.media.title;
+  API.sendChat(str);
+}
+
 API.on(API.VOTE_SKIP, SKIP);
 function SKIP() {
   API.sendChat("Sorry Cowboy don't play that shitty music again!");

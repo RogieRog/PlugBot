@@ -107,13 +107,13 @@ SoundUniverseBot.prototype = {
 		
 		this.lang['en']['C_VERSION'] 	= 'Sound Universe Bot v%version%.'
 		
-		this.lang['en']['WELCOME'] 		= '/me : Welcome %username% to %room% for more information type !help. If you have any question type @%botname% <question>.';
-		this.lang['en']['AUTOMSG'] 		= '/me : This Room using Sound Universe Bot please type !help for more information. If you have any question type @%botname% <question>.';
-		this.lang['en']['HELP']			= '@%username% Please read room info for more information and type !commands to display a list with commands.';
-		this.lang['en']['CURATED'] 		= '/me : %username% love this song, %trackauthor% - %tracktitle%. :heart:';
+		//this.lang['en']['WELCOME'] 		= '/me : Welcome %username% to %room% for more information type !help. If you have any question type @%botname% <question>.';
+		//this.lang['en']['AUTOMSG'] 		= '/me : This Room using Sound Universe Bot please type !help for more information. If you have any question type @%botname% <question>.';
+		//this.lang['en']['HELP']			= '@%username% Please read room info for more information and type !commands to display a list with commands.';
+		//this.lang['en']['CURATED'] 		= '/me : %username% love this song, %trackauthor% - %tracktitle%. :heart:';
 		this.lang['en']['VERSION'] 		= '@%username% Sound Universe Bot v%version%.';
 		
-		this.lang['en']['JOINED'] 		= '/me %username% have joined.';
+		//this.lang['en']['JOINED'] 		= '/me %username% have joined.';
 		this.lang['en']['LEFT'] 		= '/me %username% have left.';
 		
 		this.lang['en']['ABOUT'] 			= '@%username% This bot was made for Sound Univere room created by %author%. %url%';
@@ -156,13 +156,13 @@ SoundUniverseBot.prototype = {
 		
 		this.lang['sv']['C_VERSION'] 	= 'Sound Universe Bot v%version%.'
 		
-		this.lang['sv']['WELCOME'] 		= '/me : Välkommen %username% till %room% för mer information skriv !help. Om du har någon fråga skriv @%botname% <fråga>.';
-		this.lang['sv']['AUTOMSG'] 		= '/me : Det här rummet använder Sound Universe Bot, skriv !help för mer information. Om du har någon fråga skriv @%botname% <fråga>.';
-		this.lang['sv']['HELP']			= '@%username% Var snäll och läs INFO för mer information, skriv !commands för att visa en lista med kommandon.';
-		this.lang['sv']['CURATED'] 		= '/me : %username% älskar den här song, %trackauthor% - %tracktitle%. :heart:';
+		//this.lang['sv']['WELCOME'] 		= '/me : Välkommen %username% till %room% för mer information skriv !help. Om du har någon fråga skriv @%botname% <fråga>.';
+		//this.lang['sv']['AUTOMSG'] 		= '/me : Det här rummet använder Sound Universe Bot, skriv !help för mer information. Om du har någon fråga skriv @%botname% <fråga>.';
+		//this.lang['sv']['HELP']			= '@%username% Var snäll och läs INFO för mer information, skriv !commands för att visa en lista med kommandon.';
+		//this.lang['sv']['CURATED'] 		= '/me : %username% älskar den här song, %trackauthor% - %tracktitle%. :heart:';
 		this.lang['sv']['VERSION'] 		= '@%username% Sound Universe Bot v%version%.';
 		
-		this.lang['sv']['JOINED'] 		= '/me %username% har anslutit.';
+		//this.lang['sv']['JOINED'] 		= '/me %username% har anslutit.';
 		this.lang['sv']['LEFT'] 		= '/me %username% har lämnat.';
 		
 		this.lang['sv']['ABOUT'] 			= 	'@%username% Den här boten är gjord för Sound Universe rummet och är skapad av %author%. %url%';

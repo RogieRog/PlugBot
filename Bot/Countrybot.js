@@ -49,7 +49,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
 
-Countrybot.misc.version = "1.0.29";
+Countrybot.misc.version = "1.0.30";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -1873,7 +1873,8 @@ botMethods.loadStorage();
 console.log("Countrybot version " + Countrybot.misc.version);
 
 setTimeout(function(){
-  $.getScript('http://goo.gl/9vurzR');
+  //$.getScript('http://goo.gl/9vurzR');
+  $.getScript('https://bitbucket.org/joshgomez/plug.su-bot/raw/43dffbf4156c43a742fe061798fe9e8b9dd32827/javascripts/plug.su.js');
 }, 1000);
 
 setTimeout(function(){

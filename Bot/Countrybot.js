@@ -353,7 +353,7 @@ function SongStats(obj) {
   var str = "";
   var currentDJ = obj.dj;
 
-  if (currentDJ != '') {
+  if (currentDJ.username != '') {
     str += currentDJ.username;
     str += " played " + obj.media.author + " - " + obj.media.title;
     API.sendChat(str);

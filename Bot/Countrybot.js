@@ -49,7 +49,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
 
-Countrybot.misc.version = "1.0.31";
+Countrybot.misc.version = "1.0.32";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -345,19 +345,6 @@ API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
   API.sendChat("Welcome to The Country Club @"+ user.username +"!");
-}
-
-API.on(API.DJ_ADVANCE, SongStats);
-function SongStats(obj) {
-  if (obj == null) return; // no dj
-  var str = "";
-  var currentDJ = obj.dj;
-
-  if (currentDJ.username != '') {
-    str += currentDJ.username;
-    str += " played " + obj.media.author + " - " + obj.media.title;
-    API.sendChat(str);
-  }
 }
 
 API.on(API.VOTE_SKIP, SKIP);

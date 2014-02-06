@@ -114,7 +114,7 @@ SoundUniverseBot.prototype = {
 		this.lang['en']['VERSION'] 		= '@%username% Sound Universe Bot v%version%.';
 		
 		//this.lang['en']['JOINED'] 		= '/me %username% have joined.';
-		this.lang['en']['LEFT'] 		= '/me %username% have left.';
+		this.lang['en']['LEFT'] 		= '/me %username% has left.';
 		
 		this.lang['en']['ABOUT'] 			= '@%username% This bot was made for Sound Univere room created by %author%. %url%';
 		

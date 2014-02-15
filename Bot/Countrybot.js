@@ -35,6 +35,9 @@
  * (yours without Authors permission) WELL SERIOUSLY GET YOU TO FACE THE CONSEQUENCES!
  *
  */
+ 
+ 
+if(window.location.href === "http://plug.dj/the-country-club-1/"){
 
 var Countrybot = {};
 var ruleSkip = {};
@@ -1871,4 +1874,7 @@ setTimeout(function(){
   });
 }, 3000);
 
-API.sendChat('Countrybot Script v'+ Countrybot.misc.version +' Reporting for duty!')
+API.sendChat('Countrybot Script v'+ Countrybot.misc.version +' Reporting for duty!');
+}else{
+   API.sendChat("This bot cannot work in this lobby! Now alerting Socket...");
+};

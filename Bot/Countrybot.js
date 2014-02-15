@@ -37,7 +37,6 @@
  */
  
  
-if(window.location.href === "http://plug.dj/the-country-club-1/"){
 
 var Countrybot = {};
 var ruleSkip = {};
@@ -81,6 +80,7 @@ Countrybot.settings.beggerFilter = true;
 Countrybot.settings.interactive = true;
 Countrybot.settings.ruleSkip = true;
 Countrybot.settings.removedFilter = true;
+var lobby = "the-country-club-1";
 
 
 Countrybot.admins = 
@@ -90,31 +90,25 @@ Countrybot.admins =
 // Filtering Chat Words below
 
 Countrybot.filters.swearWords = ["slut","mofo","penis","penus","fuck","shit","bitch","cunt","twat","faggot","queer","dumb ass","pussy","dick","cocksucker","asshole","vagina","tit","mangina","tits","cock","jerk","puta","puto","cum","sperm","ass-hat","ass-jabber","assbanger","assfuck","assfucker","assnigger","butt plug","bollox","blowJob","Blow job","bampot","cameltoe","chode","clitfuck","cunt","dildo","douche","doochbag","dike","dyke","fatass","fat ass","fuckass","fuckbag","fuckboy","fuckbrain","gay","gaylord","handjob","hoe","Jizz","jerk off","kunt","lesbian","lesbo","lezzie","minge","munging","nut sack","nutsack","queer","queef","rimjob","scrote","schlong","titfuck","twat","unclefucker","va-j-j","vajayjay","vjayjay","wankjob","whore"];
-
 Countrybot.filters.commandWords = [".say",".catfact",".dogfact",".fortune",".songlink",".commands",".bansong 1",".down",".join",".woot",".meh",".status",".tcf",".cf",".rules",".version",".test",".cancel",".test",".source"];
-
 Countrybot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jockey","towelhead","towel head","chink","gook","porch monkey","Coolie","nigga","nigguh","black shit","black monkey","you ape","you monkey","you gorilla","black ass","assnigger","honkey","White bread","white ass","jungle bunny","niglet","nigaboo","paki","ruski","sand nigger","sandnigger","wetback","wet back"];
-
 Countrybot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
 
 // Filtering Fun Commands below
 
 Countrybot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
-
 Countrybot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake"];
-
 Countrybot.misc.drink = ["13 jello shots", "a cold PBR", "an egg nog spike with some bourbon", "a martini, you snob", "a forty of Ole English", "a 6 pack of my finest"];
-
 Countrybot.misc.tswizzle = [
-  "http://youtu.be/LEdqn-Gtg-s?t=23s",
-  "http://www.dumpaday.com/wp-content/uploads/2013/01/breakup-taylor-swift-meme.jpg",
-  "http://1.bp.blogspot.com/-1vwpWloqjCY/UDJANvDdAKI/AAAAAAAANoM/UQsKau1o5Ws/s1600/Aaaand-its-gone-country.jpg",
-  "http://media.tumblr.com/tumblr_m7sr6gG4Ln1r8lhxo.gif",
-  "http://i258.photobucket.com/albums/hh253/jimifunguzz/taylor-gif-7.gif",
-  "http://24.media.tumblr.com/bb6654c9755afca23a4ddb3bf6945860/tumblr_mf7olnV9z01r3vsr3o1_500.jpg",
-  "http://images.cheezburger.com/completestore/2010/9/27/ad2a72e3-9d6b-4b47-92e2-d6d68988bafc.jpg",
-  "http://cf.chucklesnetwork.agj.co/items/1/3/2/2/7/3/so-are-you-telling-me-that-taylor-swift-isnt-bluegrass.jpg",
-  "http://assets.diylol.com/hfs/234/3a3/d07/resized/taylor-swift-meme-generator-i-sing-well-if-you-re-deaf-c0f3bd.jpg?1346752503.jpg"
+"http://youtu.be/LEdqn-Gtg-s?t=23s",
+"http://www.dumpaday.com/wp-content/uploads/2013/01/breakup-taylor-swift-meme.jpg",
+"http://1.bp.blogspot.com/-1vwpWloqjCY/UDJANvDdAKI/AAAAAAAANoM/UQsKau1o5Ws/s1600/Aaaand-its-gone-country.jpg",
+"http://media.tumblr.com/tumblr_m7sr6gG4Ln1r8lhxo.gif",
+"http://i258.photobucket.com/albums/hh253/jimifunguzz/taylor-gif-7.gif",
+"http://24.media.tumblr.com/bb6654c9755afca23a4ddb3bf6945860/tumblr_mf7olnV9z01r3vsr3o1_500.jpg",
+"http://images.cheezburger.com/completestore/2010/9/27/ad2a72e3-9d6b-4b47-92e2-d6d68988bafc.jpg",
+"http://cf.chucklesnetwork.agj.co/items/1/3/2/2/7/3/so-are-you-telling-me-that-taylor-swift-isnt-bluegrass.jpg",
+"http://assets.diylol.com/hfs/234/3a3/d07/resized/taylor-swift-meme-generator-i-sing-well-if-you-re-deaf-c0f3bd.jpg?1346752503.jpg"
 ];
 
 Countrybot.misc.rog = [ 'Roger The Jawa! is the greatest!', 'Have I ever told you how awesome Roger The Jawa! is?', 'Utinni!' ];
@@ -336,21 +330,26 @@ Countrybot.pubVars.skipOnExceed;
 Countrybot.pubVars.command = false;
 
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
+if(window.location.href === "http://plug.dj/"+lobby+"/"){
 
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
-
 API.on(API.DJ_ADVANCE, woot);
+API.on(API.VOTE_SKIP, SKIP);
+API.on(API.USER_JOIN, UserJoin);
+API.on(API.DJ_ADVANCE, DJ_ADVANCE);
+
+
+
+
 function woot(){
 $('#woot').click();
 } 
 
-API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
   API.sendChat("Welcome to The Country Club @"+ user.username +"!");
 }
 
-API.on(API.VOTE_SKIP, SKIP);
 function SKIP() {
   API.sendChat("Sorry Cowboy don't play that shitty music again!");
 }
@@ -1846,7 +1845,6 @@ API.on(API.CHAT, function(data){
 
         });
 
-API.on(API.DJ_ADVANCE, DJ_ADVANCE);
 function DJ_ADVANCE(data){
   setTimeout(function(){
     if(typeof response === 'undefined' && data.media.format != 2 && Countrybot.settings.removedFilter){

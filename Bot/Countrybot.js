@@ -331,15 +331,12 @@ Countrybot.pubVars.command = false;
 
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
 if(window.location.href === "http://plug.dj/"+lobby+"/"){
-if(API.getHost === "RogieRog"){
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, woot);
 API.on(API.VOTE_SKIP, SKIP);
 API.on(API.USER_JOIN, UserJoin);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
-
-
-
+API.on(API.CURATE_UPDATE, curated);
 
 function woot(){
 $('#woot').click();
@@ -354,8 +351,7 @@ function SKIP() {
   API.sendChat("Sorry Cowboy don't play that shitty music again!");
 }
 
-API.on(API.CURATE_UPDATE, callback);
-function callback(obj)
+function curated(obj)
 {
   var media = API.getMedia();
   API.sendChat(obj.user.username + " Added this song!");
@@ -1873,6 +1869,6 @@ setTimeout(function(){
 }, 3000);
 
 API.sendChat('Countrybot Script v'+ Countrybot.misc.version +' Reporting for duty!');
-}}else{
+}else{
    API.sendChat("This bot cannot work in this lobby! Now alerting Socket...");
 };

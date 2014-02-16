@@ -331,7 +331,7 @@ Countrybot.pubVars.command = false;
 
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
 if(window.location.href === "http://plug.dj/"+lobby+"/"){
-if(API.getHost() === "RogieRog"){
+if(API.getHost === "RogieRog"){
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, woot);
 API.on(API.VOTE_SKIP, SKIP);

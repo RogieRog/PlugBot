@@ -31,8 +31,8 @@
  * @Author:    RogieRog (Owner. of The Country Club)
 
 
- * [NOTE]: THERE IS NOTHING HERE FOR YOU! COPYING THIS SCRIPT AND USING "IT" or "AS" 
- * (yours without Authors permission) WELL SERIOUSLY GET YOU TO FACE THE CONSEQUENCES!
+ * [NOTE]: THERE IS NOTHING HERE FOR YOU! COPYING ANY PART OF THIS SCRIPT AND USING "IT" or "AS" 
+ *        (Yours Without Authors Permission) WELL SERIOUSLY GET YOU TO FACE THE CONSEQUENCES!
  *
  */
  
@@ -83,19 +83,21 @@ Countrybot.settings.removedFilter = true;
 var lobby = "the-country-club-1";
 
 
-Countrybot.admins = 
-//       [NEON]                      [Rogie]                    [RedNeck]                   [minellium]               [Jovi]
-["50aeaeb6c3b97a2cb4c25bd2","50b3dd0d3e083e26dbef9319","51c49679877b9263732212c7","5293525e96fba53bee4179e5","50b3e11a877b9228b4cf2527"];
+Countrybot.admins = [
+"50aeaeb6c3b97a2cb4c25bd2",//    [NEON]
+"50b3dd0d3e083e26dbef9319",//    [Rogie]
+"51c49679877b9263732212c7",//    [RedNeck]
+"5293525e96fba53bee4179e5",//    [minellium]
+"50b3e11a877b9228b4cf2527"//     [Jovi]
+];
 
 // Filtering Chat Words below
-
 Countrybot.filters.swearWords = ["slut","mofo","penis","penus","fuck","shit","bitch","cunt","twat","faggot","queer","dumb ass","pussy","dick","cocksucker","asshole","vagina","tit","mangina","tits","cock","jerk","puta","puto","cum","sperm","ass-hat","ass-jabber","assbanger","assfuck","assfucker","assnigger","butt plug","bollox","blowJob","Blow job","bampot","cameltoe","chode","clitfuck","cunt","dildo","douche","doochbag","dike","dyke","fatass","fat ass","fuckass","fuckbag","fuckboy","fuckbrain","gay","gaylord","handjob","hoe","Jizz","jerk off","kunt","lesbian","lesbo","lezzie","minge","munging","nut sack","nutsack","queer","queef","rimjob","scrote","schlong","titfuck","twat","unclefucker","va-j-j","vajayjay","vjayjay","wankjob","whore"];
 Countrybot.filters.commandWords = [".say",".catfact",".dogfact",".fortune",".songlink",".commands",".bansong 1",".down",".join",".woot",".meh",".status",".tcf",".cf",".rules",".version",".test",".cancel",".test",".source"];
 Countrybot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jockey","towelhead","towel head","chink","gook","porch monkey","Coolie","nigga","nigguh","black shit","black monkey","you ape","you monkey","you gorilla","black ass","assnigger","honkey","White bread","white ass","jungle bunny","niglet","nigaboo","paki","ruski","sand nigger","sandnigger","wetback","wet back"];
 Countrybot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
 
 // Filtering Fun Commands below
-
 Countrybot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
 Countrybot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake"];
 Countrybot.misc.drink = ["13 jello shots", "a cold PBR", "an egg nog spike with some bourbon", "a martini, you snob", "a forty of Ole English", "a 6 pack of my finest"];
@@ -118,53 +120,53 @@ Countrybot.misc.jovi = [ 'Your local friendly TT super...', 'Jovi knows, so be c
 Countrybot.misc.banjo = [ 'Paddle faster!!!!', 'Wanna see my resonator?', 'You play a mean banjo!', 'Jeff is the BESTO!', 'http://cdn.meme.li/i/ox1dg.jpg' ];
 
 Countrybot.misc.redneck = [
-  "You just might be a Redneck if: You've ever tried to drown a fish.",
-  "You just might be a Redneck if: You can yell to your mom, 'Hey, Aunt Betty!'",
-  "You just might be a Redneck if: Your kids fight with the dogs for their dinner.",
-  "You just might be a Redneck if: You've ever stood in line to have your picture taken with a freak of nature.",
-  "You just might be a Redneck if: More than one living relative is named after a Southern Civil War general.",
-  "You just might be a Redneck if: Your boat has not left the driveway in 15 years.",
-  "You just might be a Redneck if: Your mother has been involved in a fist-fight at a high school sports event.",
-  "You just might be a Redneck if: None of your shirts cover your stomach.",
-  "You just might be a Redneck if: You consider a six-pack and a bug-zapper high-quality entertainment.",
-  "You just might be a Redneck if: You've ever been kicked out of the zoo for heckling the monkeys.",
-  "You just might be a Redneck if: You've ever bathed with flea and tick soap.",
-  "You just might be a Redneck if: Your family tree does not fork.",
-  "You just might be a Redneck if: Your baby's first words are 'Attention K-Mart shoppers.'",
-  "You just might be a Redneck if: You have a Hefty Bag for a passenger-side window.",
-  "You just might be a Redneck if: The fifth grade is referred to as ' your senior year. '",
-  "You just might be a Redneck if: Three quarters of the clothes you own have logos on them.",
-  "You just might be a Redneck if: Your gene pool doesn't have a 'deep end.'",
-  "You just might be a Redneck if: You have the taxidermist's number on speed-dial.",
-  "You just might be a Redneck if: Your dog and your wallet are both on a chain.",
-  "You just might be a Redneck if: The UFO hotline limits you to one call per day.",
-  "You just might be a Redneck if: Your two-year-old has more teeth than you do.",
-  "You just might be a Redneck if: You have ever been accused of lying through your tooth.",
-  "You just might be a Redneck if: Your underwear doubles as your bathing suit.",
-  "You just might be a Redneck if: You let you kid pee in the parking lot at K-Mart."
-  ];
+"You just might be a Redneck if: You've ever tried to drown a fish.",
+"You just might be a Redneck if: You can yell to your mom, 'Hey, Aunt Betty!'",
+"You just might be a Redneck if: Your kids fight with the dogs for their dinner.",
+"You just might be a Redneck if: You've ever stood in line to have your picture taken with a freak of nature.",
+"You just might be a Redneck if: More than one living relative is named after a Southern Civil War general.",
+"You just might be a Redneck if: Your boat has not left the driveway in 15 years.",
+"You just might be a Redneck if: Your mother has been involved in a fist-fight at a high school sports event.",
+"You just might be a Redneck if: None of your shirts cover your stomach.",
+"You just might be a Redneck if: You consider a six-pack and a bug-zapper high-quality entertainment.",
+"You just might be a Redneck if: You've ever been kicked out of the zoo for heckling the monkeys.",
+"You just might be a Redneck if: You've ever bathed with flea and tick soap.",
+"You just might be a Redneck if: Your family tree does not fork.",
+"You just might be a Redneck if: Your baby's first words are 'Attention K-Mart shoppers.'",
+"You just might be a Redneck if: You have a Hefty Bag for a passenger-side window.",
+"You just might be a Redneck if: The fifth grade is referred to as ' your senior year. '",
+"You just might be a Redneck if: Three quarters of the clothes you own have logos on them.",
+"You just might be a Redneck if: Your gene pool doesn't have a 'deep end.'",
+"You just might be a Redneck if: You have the taxidermist's number on speed-dial.",
+"You just might be a Redneck if: Your dog and your wallet are both on a chain.",
+"You just might be a Redneck if: The UFO hotline limits you to one call per day.",
+"You just might be a Redneck if: Your two-year-old has more teeth than you do.",
+"You just might be a Redneck if: You have ever been accused of lying through your tooth.",
+"You just might be a Redneck if: Your underwear doubles as your bathing suit.",
+"You just might be a Redneck if: You let you kid pee in the parking lot at K-Mart."
+];
 
-  Countrybot.misc.ball = [
-  " It is certain",
-  " It is decidedly so",
-  " Without a doubt",
-  " Yes definitely",
-  " You may rely on it",
-  " As I see it yes",
-  " Most likely",
-  " Outlook good",
-  " Yes",
-  " Signs point to yes :trollface:",
-  " Reply hazy try again",
-  " Ask again later",
-  " Better not tell you now",
-  " Cannot predict now",
-  " Concentrate and ask again",
-  " Don't count on it",
-  " My reply is no",
-  " My sources say no",
-  " Outlook not so good",
-  " Very doubtful"];
+Countrybot.misc.ball = [
+" It is certain",
+" It is decidedly so",
+" Without a doubt",
+" Yes definitely",
+" You may rely on it",
+" As I see it yes",
+" Most likely",
+" Outlook good",
+" Yes",
+" Signs point to yes :trollface:",
+" Reply hazy try again",
+" Ask again later",
+" Better not tell you now",
+" Cannot predict now",
+" Concentrate and ask again",
+" Don't count on it",
+" My reply is no",
+" My sources say no",
+" Outlook not so good",
+" Very doubtful"];
 
 Countrybot.misc.ht = [
 "My magic coins says: Tails", 
@@ -1733,10 +1735,7 @@ API.on(API.CHAT, function(data){
             setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
           }
           break;
-
-
-
-
+          
       }
     }
   }
@@ -1815,50 +1814,43 @@ API.on(API.CHAT, function(data){
 
 API.on(API.CHAT, function(data){
   msg = data.message.toLowerCase(), chatID = data.chatID, fromID = data.fromID;
-  if(Countrybot.misc.ready || Countrybot.admins.indexOf(fromID) > -1 ||API.getUser(fromID).permission > 1){
-    if(msg.indexOf(':eyeroll:') > -1){
+  if(Countrybot.misc.ready || Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
+  if(msg.indexOf(':eyeroll:') > -1){
       API.sendChat('/me ¬_¬');
-      if(Countrybot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-        Countrybot.misc.ready = false;
-        setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
-      }
+      
+    Countrybot.misc.ready = false;
+    setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
     }
-    if(msg.indexOf(':notamused:') > -1){
+  if(msg.indexOf(':notamused:') > -1){
       API.sendChat('/me ಠ_ಠ');
-      if(Countrybot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-        Countrybot.misc.ready = false;
-        setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
-      }
+      
+    Countrybot.misc.ready = false;
+    setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
     }
-    if(msg.indexOf(':yuno:') > -1){
+  if(msg.indexOf(':yuno:') > -1){
       API.sendChat('/me ლ(ಥ益ಥლ');
-        if(Countrybot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-          Countrybot.misc.ready = false;
-          setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
-        }
-        }
-        }
-
-        });
+          
+    Countrybot.misc.ready = false;
+    setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
+    }
+  }
+});
 
 function DJ_ADVANCE(data){
   setTimeout(function(){
     if(typeof response === 'undefined' && data.media.format != 2 && Countrybot.settings.removedFilter){
-      //API.sendChat('/me This video may be unavailable!!');
-      //botMethods.skip();
+      //API.sendChat("/me This video may be unavailable!!");
     }
-  }, 1500);
-
-  cancel = false;
-}
-
+    }, 1500);
+    cancel = false;
+    }
 
 botMethods.loadStorage();
 console.log("Countrybot version " + Countrybot.misc.version);
 
 setTimeout(function(){
   //$.getScript('http://goo.gl/9vurzR');
-  $.getScript('https://raw.github.com/RogieRog/PlugBot/master/Bot/plug.su.js');
+  $.getScript('http://goo.gl/cc7BW3');
   //$.getScript('https://bitbucket.org/joshgomez/plug.su-bot/raw/43dffbf4156c43a742fe061798fe9e8b9dd32827/javascripts/plug.su.js');
 }, 1000);
 

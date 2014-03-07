@@ -357,7 +357,7 @@ API.moderateForceSkip();
 }, 500);
 };
 
-CountryBot.unhook = function(){
+Countrybot.unhook = function(){
 setTimeout(function(){
 API.off(API.DJ_ADVANCE, djAdvanceEvent);
 API.off(API.DJ_ADVANCE, woot);
@@ -374,7 +374,7 @@ API.off(API.CHAT);
 }, 500);
 };
 
-CountryBot.hook = function(){
+Countrybot.hook = function(){
 setTimeout(function(){
 (function(){$.getScript('http://goo.gl/HoMXex');}());
 }, 500);
@@ -964,7 +964,7 @@ API.on(API.CHAT, function(data){
 
         case "version":
           if(API.getUser(data.fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            API.sendChat("CountryBot version " + Countrybot.misc.version);
+            API.sendChat("Countrybot version " + Countrybot.misc.version);
           }else{
             API.sendChat("This command requires Admins only!");
           }

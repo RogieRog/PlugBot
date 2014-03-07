@@ -335,7 +335,6 @@ API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, woot);
 API.on(API.USER_JOIN, UserJoin);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
-API.on(API.CURATE_UPDATE, curated);
 
 function woot(){
 $('#woot').click();
@@ -364,7 +363,6 @@ API.off(API.DJ_ADVANCE, djAdvanceEvent);
 API.off(API.DJ_ADVANCE, woot);
 API.off(API.USER_JOIN, UserJoin);
 API.off(API.DJ_ADVANCE, DJ_ADVANCE);
-API.off(API.CURATE_UPDATE, curated);
 API.off(API.USER_JOIN);
 API.off(API.USER_LEAVE);
 API.off(API.USER_SKIP);

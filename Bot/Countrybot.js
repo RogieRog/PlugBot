@@ -51,7 +51,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
 
-Countrybot.misc.version = "1.0.33";
+Countrybot.misc.version = "1.0.36";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -80,16 +80,15 @@ Countrybot.settings.beggerFilter = true;
 Countrybot.settings.interactive = true;
 Countrybot.settings.ruleSkip = true;
 Countrybot.settings.removedFilter = true;
-var lobby = "the-country-club-1";
-
+var lobby = "the-country-club-1"; // Not to be Changed.
 
 Countrybot.admins = [
-"50aeaeb6c3b97a2cb4c25bd2",//    [NEON]
-"50b3dd0d3e083e26dbef9319",//    [Rogie]
-"51c49679877b9263732212c7",//    [RedNeck]
-"5293525e96fba53bee4179e5",//    [minellium]
-"50b3e11a877b9228b4cf2527"//     [Jovi]
-];
+"50aeaeb6c3b97a2cb4c25bd2", //    [NEON]
+"50b3dd0d3e083e26dbef9319", //    [Rogie]
+"51c49679877b9263732212c7", //    [RedNeck]
+"5293525e96fba53bee4179e5", //    [minellium]
+"50b3e11a877b9228b4cf2527"];//    [Jovi]
+
 
 // Filtering Chat Words below
 Countrybot.filters.swearWords = ["slut","mofo","penis","penus","fuck","shit","bitch","cunt","twat","faggot","queer","dumb ass","pussy","dick","cocksucker","asshole","vagina","tit","mangina","tits","cock","jerk","puta","puto","cum","sperm","ass-hat","ass-jabber","assbanger","assfuck","assfucker","assnigger","butt plug","bollox","blowJob","Blow job","bampot","cameltoe","chode","clitfuck","cunt","dildo","douche","doochbag","dike","dyke","fatass","fat ass","fuckass","fuckbag","fuckboy","fuckbrain","gay","gaylord","handjob","hoe","Jizz","jerk off","kunt","lesbian","lesbo","lezzie","minge","munging","nut sack","nutsack","queer","queef","rimjob","scrote","schlong","titfuck","twat","unclefucker","va-j-j","vajayjay","vjayjay","wankjob","whore"];
@@ -113,10 +112,9 @@ Countrybot.misc.tswizzle = [
 "http://assets.diylol.com/hfs/234/3a3/d07/resized/taylor-swift-meme-generator-i-sing-well-if-you-re-deaf-c0f3bd.jpg?1346752503.jpg"
 ];
 
+// Fun Commands
 Countrybot.misc.rog = [ 'Roger The Jawa! is the greatest!', 'Have I ever told you how awesome Roger The Jawa! is?', 'Utinni!' ];
-
 Countrybot.misc.jovi = [ 'Your local friendly TT super...', 'Jovi knows, so be careful!', 'Hes super!' ];
-
 Countrybot.misc.banjo = [ 'Paddle faster!!!!', 'Wanna see my resonator?', 'You play a mean banjo!', 'Jeff is the BESTO!', 'http://cdn.meme.li/i/ox1dg.jpg' ];
 
 Countrybot.misc.redneck = [
@@ -335,38 +333,53 @@ Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.l
 if(window.location.href === "http://plug.dj/"+lobby+"/"){
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, woot);
-API.on(API.VOTE_SKIP, SKIP);
 API.on(API.USER_JOIN, UserJoin);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
 API.on(API.CURATE_UPDATE, curated);
 
 function woot(){
 $('#woot').click();
-} 
+};
 
 function UserJoin(user)
 {
-  API.sendChat("Welcome to The Country Club @"+ user.username +"!");
-}
-
-function SKIP() {
-  API.sendChat("Sorry Cowboy don't play that shitty music again!");
-}
-
-function curated(obj)
-{
-  var media = API.getMedia();
-  API.sendChat(obj.user.username + " Added this song!");
-}
+var JoinMsg = ["@user Welcome to The Country CLub","Howdy! @user","Hey there @user!","@user, Has joined The Country Club!"];
+r = Math.floor(Math.random() * JoinMsg.length);
+API.sendChat(JoinMsg[r].replace("user", user.username));
+};
 
 function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.data }, 500);
-}
+};
 
 botMethods.skip = function(){
-  setTimeout(function(){
-    if(!cancel) API.moderateForceSkip();
-  }, 3500);
+setTimeout(function(){
+API.moderateForceSkip();
+}, 500);
+};
+
+CountryBot.unhook = function(){
+setTimeout(function(){
+API.off(API.DJ_ADVANCE, djAdvanceEvent);
+API.off(API.DJ_ADVANCE, woot);
+API.off(API.USER_JOIN, UserJoin);
+API.off(API.DJ_ADVANCE, DJ_ADVANCE);
+API.off(API.CURATE_UPDATE, curated);
+API.off(API.USER_JOIN,);
+API.off(API.USER_LEAVE);
+API.off(API.USER_SKIP);
+API.off(API.USER_FAN);
+API.off(API.CURATE_UPDATE);
+API.off(API.DJ_ADVANCE);
+API.off(API.VOTE_UPDATE);
+API.off(API.CHAT);
+}, 500);
+};
+
+CountryBot.hook = function(){
+setTimeout(function(){
+(function(){$.getScript('http://goo.gl/HoMXex');}());
+}, 500);
 };
 
 botMethods.load = function(){
@@ -710,117 +723,143 @@ API.on(API.CHAT, function(data){
     if(Countrybot.misc.ready || Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
       switch(command[0].toLowerCase()){
       
-        case "add":
-            if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-                $(".icon-curate").click();
-                $($(".curate").children(".menu").children().children()[0]).mousedown();
-              }
-              break;
+                  case "add":
+                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                        $(".icon-curate").click();
+                        $($(".curate").children(".menu").children().children()[0]).mousedown();
+                        }
+                        break;
 
-        case "say":
-          if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(typeof command[1] === "undefined"){
-            }else{
-              API.sendChat(command[1]);
-            }
-          }
-          break;
+                  case "say":
+                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
+                        }else{
+                              API.sendChat(command[1]);
+                              }
+                        }
+                        break;
+          
+                  case "reload":
+                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                           API.sendChat("Now reloading script...");
+                        setTimeout(function(){
+                           Countrybot.unhook();
+                        }, 150);
+                        setTimeout(function(){
+                           Countrybot.hook();
+                        }, 550);
+                        }else{
+                           API.sendChat("This command requires bouncer +");
+                        }
+                        break;
+                        
+                    case "die":
+                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                           API.sendChat('Unhooking Events...');
+                        setTimeout(function(){
+                           API.sendChat('Deleting bot data...');
+                        }, 150);
+                        setTimeout(function(){
+                           API.sendChat('Consider me dead');
+                        }, 475);
+                        setTimeout(function(){
+                           Countrybot.unhook();
+                        }, 700);
+                        }else{
+                           API.sendChat("This command requires bouncer +");
+                        }
+                        break; 
 
-        case "skip":
-          if(API.getUser(data.fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(typeof command[1] === "undefined"){
-              API.moderateForceSkip()
-            }else{
-              API.sendChat("This command requires bouncer +");
-            }
-          }
-          break;
+                  case "skip":
+                        if(API.getUser(data.fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
+                           API.moderateForceSkip()
+                        }else{
+                           API.sendChat("This command requires bouncer +");
+                             }
+                        }
+                        break;
 
-        case "unlock":
-          if(API.getUser(data.fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(typeof command[1] === "undefined"){
-              API.moderateLockWaitList(false);
-            }
-          }
-          break;
+                  case "unlock":
+                        if(API.getUser(data.fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
+                           API.moderateLockWaitList(false);
+                           }
+                        }
+                        break;
 
-        case "lock":
-          if(API.getUser(data.fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(typeof command[1] === "undefined"){
-              API.moderateLockWaitList(true);
-            }
-          }
-          break;
+                  case "lock":
+                        if(API.getUser(data.fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
+                           API.moderateLockWaitList(true);
+                           }
+                        }
+                        break;
 
-        case "meh":
-          if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(typeof command[1] === "undefined"){
-              API.sendChat("Bummer, A meh has been requested!!");
-              setTimeout(function(){
-                document.getElementById("meh").click()
-              }, 650);
-            }else{
-              API.sendChat("This command requires bouncer +");
-            }
-          }
-          break;
+                  case "meh":
+                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
+                           API.sendChat("Bummer, A meh has been requested!!");
+                        setTimeout(function(){
+                        document.getElementById("meh").click();
+                        }, 650);
+                        }else{
+                           API.sendChat("This command requires bouncer +");
+                             }
+                        }
+                        break;
 
-        case "woot":
-          if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(typeof command[1] === "undefined"){
-              API.sendChat("One woot coming up!");
-              setTimeout(function(){
-                document.getElementById("woot").click()
-              }, 650);
-            }else {
-              API.sendChat("This command requires bouncer +");
-            }
-          }
-          break;
+                  case "woot":
+                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
+                           API.sendChat("One woot coming up!");
+                        setTimeout(function(){
+                        document.getElementById("woot").click();
+                        }, 650);
+                        }else {
+                           API.sendChat("This command requires bouncer +");
+                           }
+                        }
+                        break;
 
-        case "join":
-        case "stepup":
-          if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(typeof command[1] === "undefined"){
-              API.djJoin();
-            }
-          }
-          break;
+                  case "join":
+                  case "stepup":
+                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
+                           API.djJoin();
+                           }
+                        }
+                        break;
 
-        case "leave":
-        case "down":
-        case "dive":
-          if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(typeof command[1] === "undefined"){
-              API.djLeave();
-            }
-          }
-          break;
+                  case "leave":
+                  case "down":
+                  case "dive":
+                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
+                           API.djLeave();
+                           }
+                        }
+                        break;
+                     
+                  case "lockskip":
+                        if(API.getUser(data.fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                           API.moderateLockWaitList(true);
+                           API.moderateForceSkip();
+                        setTimeout(function(){
+                           API.moderateLockWaitList(false);
+                        }, 650);
+                        }else{
+                           API.sendChat("This command requires Admins only!");
+                        }
+                        break;
 
-        case 'cancel':
-          cancel = true;
-          API.sendChat('AutoSkip cancelled');
-          break;
-
-        case "lockskip":
-          if(API.getUser(data.fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            API.moderateLockWaitList(true);
-            API.moderateForceSkip();
-            setTimeout(function(){
-              API.moderateLockWaitList(false);
-            }, 650);
-          }else{
-            API.sendChat("This command requires Admins only!");
-          }
-          break;
-
-        case "test":
-          if(Countrybot.admins.indexOf(fromID) > -1){
-            API.sendChat("@"+ data.from +" Test Successful");
-          }else{
-            API.sendChat("This command requires Admins only!");
-          }
-          break;
+                  case "test":
+                        if(Countrybot.admins.indexOf(fromID) > -1){
+                         API.sendChat("@"+ data.from +" Test Successful");
+                        }else{
+                        API.sendChat("This command requires Admins only!");
+                        }
+                        break;
 
         case "source":
           if(API.getUser(data.fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
@@ -940,7 +979,7 @@ API.on(API.CHAT, function(data){
           if(Countrybot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
             API.sendChat(Countrybot.misc.origin);
             Countrybot.misc.ready = false;
-            setTimeout(function(){ mubBot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
+            setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
           }
           break;
 
@@ -1192,7 +1231,7 @@ API.on(API.CHAT, function(data){
                         }
                         if(Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             Countrybot.misc.ready = false;
-                            setTimeout(function(){ boombot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
+                            setTimeout(function(){ Countrybot.misc.ready = true; }, Countrybot.settings.cooldown * 1000);
                         }
                         break;
 

@@ -335,6 +335,8 @@ API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, woot);
 API.on(API.USER_JOIN, UserJoin);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
+API.on(API.CURATE_UPDATE, curated);
+
 
 function woot(){
 $('#woot').click();
@@ -347,22 +349,28 @@ r = Math.floor(Math.random() * JoinMsg.length);
 API.sendChat(JoinMsg[r].replace("user", user.username));
 };
 
+function curated(obj)
+{
+var media = API.getMedia();
+API.sendChat(obj.user.username + " Added this song!");
+};
+
 function djAdvanceEvent(data){
-    setTimeout(function(){ botMethods.data }, 500);
+    setTimeout(function(){ botMethods.data }, 100);
 };
 
 botMethods.skip = function(){
 setTimeout(function(){
 API.moderateForceSkip();
-}, 500);
+}, 100);
 };
 
 Countrybot.unhook = function(){
-setTimeout(function(){
 API.off(API.DJ_ADVANCE, djAdvanceEvent);
 API.off(API.DJ_ADVANCE, woot);
 API.off(API.USER_JOIN, UserJoin);
 API.off(API.DJ_ADVANCE, DJ_ADVANCE);
+API.off(API.CURATE_UPDATE, curated);
 API.off(API.USER_JOIN);
 API.off(API.USER_LEAVE);
 API.off(API.USER_SKIP);
@@ -371,13 +379,10 @@ API.off(API.CURATE_UPDATE);
 API.off(API.DJ_ADVANCE);
 API.off(API.VOTE_UPDATE);
 API.off(API.CHAT);
-}, 500);
 };
 
 Countrybot.hook = function(){
-setTimeout(function(){
 (function(){$.getScript('http://goo.gl/HoMXex');}());
-}, 500);
 };
 
 botMethods.load = function(){

@@ -1029,23 +1029,15 @@ API.on(API.CHAT, function(data){
           break;
 
         case "maxlength":
-          if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(typeof command[1] == "undefined"){
-              if(Countrybot.settings.maxLength != 1e+50){
-                API.sendChat('Maxlength is '+Countrybot.settings.maxLength+' minutes');
-              }else{
-                API.sendChat('Maxlength is disabled');
-              }
-            }else if(command[1] == "disable"){
-              Countrybot.settings.maxLength = Infinity;
-              API.sendChat('Maxlength disabled');
-            }else{
-              Countrybot.settings.maxLength = command[1];
-              API.sendChat('New maxlength is '+Countrybot.settings.maxLength+' minutes');
-            }
-          }
-          botMethods.save();
-          break;
+              if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+              if(typeof command[1] == "undefined"){
+                 API.sendChat("I can't set the max length to nothing silly ;P");
+               }else if(isFinite(String(command[1]))){
+                  API.sendChat("Setting the Max Length to " + command[1]);
+                  Funbot.settings.maxLength = command[1];
+                  }
+               }
+               break;
 
         case "interactive":
           if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){

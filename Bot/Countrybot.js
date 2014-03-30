@@ -441,21 +441,21 @@ botMethods.djAdvanceEvent = function(data){
   var song = API.getMedia();
   if(botMethods.checkHistory() > 0 && Countrybot.settings.historyFilter){
     if(API.getUser().permission < 2){
-      API.sendChat("This song is in the history! You should make me a mod so that I could skip it!");
+      //API.sendChat("This song is in the history! You should make me a mod so that I could skip it!");
     }else if(API.getUser().permission > 1){
-      API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
-      API.moderateForceSkip();
+      //API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
+      //API.moderateForceSkip();
     }else if(song.duration > Countrybot.settings.maxLength * 60){
       Countrybot.pubVars.skipOnExceed = setTimeout( function(){
-        API.sendChat("@"+ API.getDJ().username +" You have now played for as long as this room allows, time to let someone else have the booth!");
-        API.moderateForceSkip();
+        //API.sendChat("@"+ API.getDJ().username +" You have now played for as long as this room allows, time to let someone else have the booth!");
+        //API.moderateForceSkip();
       }, Countrybot.settings.maxLength * 60000);
-      API.sendChat("@"+ API.getDJ().username +" This song will be skipped " + Countrybot.settings.maxLength + " minutes from now because it exceeds the max song length.");
+      //API.sendChat("@"+ API.getDJ().username +" This song will be skipped " + Countrybot.settings.maxLength + " minutes from now because it exceeds the max song length.");
     }else{
       setTimeout(function(){
         if(botMethods.checkHistory() > 0 && Countrybot.settings.historyFilter){
-          API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
-          API.moderateForceSkip();
+          //API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
+          //API.moderateForceSkip();
         };
       }, 1500);
     }
@@ -1031,7 +1031,7 @@ API.on(API.CHAT, function(data){
         case "maxlength":
               if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
               if(typeof command[1] == "undefined"){
-                 API.sendChat("I can't set the max length to nothing silly ;P");
+                 API.sendChat("Hey smart guy i need a number");
                }else if(isFinite(String(command[1]))){
                   API.sendChat("Setting the Max Length to " + command[1]);
                   Funbot.settings.maxLength = command[1];

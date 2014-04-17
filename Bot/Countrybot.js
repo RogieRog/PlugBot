@@ -51,7 +51,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
 
-Countrybot.misc.version = "1.0.36";
+Countrybot.misc.version = "1.0.37";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -113,8 +113,8 @@ Countrybot.misc.tswizzle = [
 ];
 
 // Fun Commands
-Countrybot.misc.rog = [ 'Roger The Jawa! is the greatest!', 'Have I ever told you how awesome Roger The Jawa! is?', 'Utinni!' ];
-Countrybot.misc.jovi = [ 'Your local friendly TT super...', 'Jovi knows, so be careful!', 'Hes super!' ];
+Countrybot.misc.rog = [ 'RogieRog is the greatest!', 'Have I ever told you how awesome RogieRog is?', 'Roger, Roger. Whats our vector, Victor?' ];
+Countrybot.misc.jovi = [ 'Jovi knows, so be careful!', 'Hes super!' ];
 Countrybot.misc.banjo = [ 'Paddle faster!!!!', 'Wanna see my resonator?', 'You play a mean banjo!', 'Jeff is the BESTO!', 'http://cdn.meme.li/i/ox1dg.jpg' ];
 
 Countrybot.misc.redneck = [
@@ -591,7 +591,7 @@ API.on(API.CHAT, function(data){
         case "props":
         case "bonus":
           if(typeof command[1] == "undefined"){
-            API.sendChat("@"+ data.from +" just gave props to @"+ API.getDJ().username +" for playing a dope track!");
+            API.sendChat("@"+ data.from +" just gave props to @"+ API.getDJ().username +" for playing a great song!");
           }
           break;
 

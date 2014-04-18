@@ -51,7 +51,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
 
-Countrybot.misc.version = "1.0.37";
+Countrybot.misc.version = "1.1.9";
 Countrybot.misc.origin = "This bot was created by RogieRog and Neon alone, and it is copyrighted!";
 Countrybot.misc.changelog = "Added a secondary check for history";
 Countrybot.misc.ready = true;
@@ -59,27 +59,20 @@ Countrybot.misc.lockSkipping = false;
 Countrybot.misc.lockSkipped = "0";
 Countrybot.misc.tacos = new Array();
 
-
 joined = new Date().getTime();
-
-cancel = false;
 
 Countrybot.filters.swearWords = new Array();
 Countrybot.filters.commandWords = new Array();
-Countrybot.filters.racistWords = new Array();
 Countrybot.filters.beggerWords = new Array();
 
 Countrybot.settings.maxLength = 10; 
 Countrybot.settings.cooldown = 10; 
 Countrybot.settings.staffMeansAccess = true;
-Countrybot.settings.historyFilter = true;
 Countrybot.settings.swearFilter = true;
 Countrybot.settings.commandFilter = true;
-Countrybot.settings.racismFilter = true;
 Countrybot.settings.beggerFilter = true;
 Countrybot.settings.interactive = true;
 Countrybot.settings.ruleSkip = true;
-Countrybot.settings.removedFilter = true;
 var lobby = "the-country-club-1"; // Not to be Changed.
 
 Countrybot.admins = [
@@ -93,7 +86,6 @@ Countrybot.admins = [
 // Filtering Chat Words below
 Countrybot.filters.swearWords = ["slut","mofo","penis","penus","fuck","shit","bitch","cunt","twat","faggot","queer","dumb ass","pussy","dick","cocksucker","asshole","vagina","tit","mangina","tits","cock","jerk","puta","puto","cum","sperm","ass-hat","ass-jabber","assbanger","assfuck","assfucker","assnigger","butt plug","bollox","blowJob","Blow job","bampot","cameltoe","chode","clitfuck","cunt","dildo","douche","doochbag","dike","dyke","fatass","fat ass","fuckass","fuckbag","fuckboy","fuckbrain","gay","gaylord","handjob","hoe","Jizz","jerk off","kunt","lesbian","lesbo","lezzie","minge","munging","nut sack","nutsack","queer","queef","rimjob","scrote","schlong","titfuck","twat","unclefucker","va-j-j","vajayjay","vjayjay","wankjob","whore"];
 Countrybot.filters.commandWords = [".say",".catfact",".dogfact",".fortune",".songlink",".commands",".bansong 1",".down",".join",".woot",".meh",".status",".tcf",".cf",".rules",".version",".test",".cancel",".test",".source"];
-Countrybot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jockey","towelhead","towel head","chink","gook","porch monkey","Coolie","nigga","nigguh","black shit","black monkey","you ape","you monkey","you gorilla","black ass","assnigger","honkey","White bread","white ass","jungle bunny","niglet","nigaboo","paki","ruski","sand nigger","sandnigger","wetback","wet back"];
 Countrybot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
 
 // Filtering Fun Commands below
@@ -307,23 +299,23 @@ Countrybot.misc.fortune = [
   " He who laughs at himself never runs out of things to laugh at.",
   " If your desires are not extravagant they will be granted.",
   " Let there be magic in your smile and firmness in your handshake.",
-  " If you want the rainbow, you must to put up with the rain. D. Parton",
-  " Nature, time and patience are the three best physicians.",
-  " Strong and bitter words indicate a weak cause.",
-  " The beginning of wisdom is to desire it.",
-  " You will have a very pleasant experience.",
-  " You will inherit some money or a small piece of land.",
-  " You will live a long, happy life.",
-  " You will spend old age in comfort and material wealth.",
-  " You will step on the soil of many countries.",
-  " You will take a chance in something in the near future.",
-  " You will witness a special ceremony.",
-  " Your everlasting patience will be rewarded sooner or later.",
-  " Your great attention to detail is both a blessing and a curse.",
-  " Your heart is a place to draw true happiness.",
-  " Your ability to juggle many tasks will take you far.",
-  " A friend asks only for your time, not your money.",
-  " You will be invited to an exciting event."];
+" f you want the rainbow, you must to put up with the rain. D. Parton",
+" Nature, time and patience are the three best physicians.",
+" Strong and bitter words indicate a weak cause.",
+" The beginning of wisdom is to desire it.",
+" You will have a very pleasant experience.",
+" You will inherit some money or a small piece of land.",
+"You will live a long, happy life.",
+" You will spend old age in comfort and material wealth.",
+" You will step on the soil of many countries.",
+" You will take a chance in something in the near future.",
+" You will witness a special ceremony.",
+" Your everlasting patience will be rewarded sooner or later.",
+" Your great attention to detail is both a blessing and a curse.",
+" Your heart is a place to draw true happiness.",
+"Your ability to juggle many tasks will take you far.",
+" A friend asks only for your time, not your money.",
+" You will be invited to an exciting event."];
 
 
 Countrybot.pubVars.skipOnExceed;
@@ -430,37 +422,7 @@ botMethods.cleanString = function(string){
   return string.replace(/&#39;/g, "'").replace(/&amp;/g, "&").replace(/&#34;/g, "\"").replace(/&#59;/g, ";").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 };
 
-botMethods.djAdvanceEvent = function(data){
-  clearTimeout(Countrybot.pubVars.skipOnExceed);
-  if(Countrybot.misc.lockSkipping){
-    API.moderateAddDJ(Countrybot.misc.lockSkipped);
-    Countrybot.misc.lockSkipped = "0";
-    Countrybot.misc.lockSkipping = false;
-    setTimeout(function(){ API.moderateRoomProps(false, true); }, 500);
-  }
-  var song = API.getMedia();
-  if(botMethods.checkHistory() > 0 && Countrybot.settings.historyFilter){
-    if(API.getUser().permission < 2){
-      //API.sendChat("This song is in the history! You should make me a mod so that I could skip it!");
-    }else if(API.getUser().permission > 1){
-      //API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
-      //API.moderateForceSkip();
-    }else if(song.duration > Countrybot.settings.maxLength * 60){
-      Countrybot.pubVars.skipOnExceed = setTimeout( function(){
-        //API.sendChat("@"+ API.getDJ().username +" You have now played for as long as this room allows, time to let someone else have the booth!");
-        //API.moderateForceSkip();
-      }, Countrybot.settings.maxLength * 60000);
-      //API.sendChat("@"+ API.getDJ().username +" This song will be skipped " + Countrybot.settings.maxLength + " minutes from now because it exceeds the max song length.");
-    }else{
-      setTimeout(function(){
-        if(botMethods.checkHistory() > 0 && Countrybot.settings.historyFilter){
-          //API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
-          //API.moderateForceSkip();
-        };
-      }, 1500);
-    }
-  }
-};
+
 
 API.on(API.CHAT, function(data){
   if(data.message.indexOf('.') === 0){
@@ -872,12 +834,6 @@ API.on(API.CHAT, function(data){
           }
           break;
 
-        case "historyfilter":
-        case "hf":
-          if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1) Countrybot.settings.historyFilter ? API.sendChat("History filter is enabled") : API.sendChat("History filter is disabled");
-          botMethods.save();
-          break;
-
         case "swearfilter":
         case "sf":
           if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1) Countrybot.settings.swearFilter ? API.sendChat("Swearing filter is enabled") : API.sendChat("Swearing filter is disabled");
@@ -887,12 +843,6 @@ API.on(API.CHAT, function(data){
         case "commandfilter":
         case "cf":
           if(Countrybot.admins.indexOf(fromID) > -1) Countrybot.settings.commandFilter ? API.sendChat("Commands filter is enabled") : API.sendChat("Commands filter is disabled");
-          botMethods.save();
-          break;
-
-        case "racismfilter":
-        case "rf":
-          if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1) Countrybot.settings.racismFilter ? API.sendChat("Racism filter is enabled") : API.sendChat("Racism filter is disabled");
           botMethods.save();
           break;
 
@@ -928,19 +878,6 @@ API.on(API.CHAT, function(data){
           botMethods.save();
           break;
 
-        case "trf":
-          if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(Countrybot.settings.racismFilter){
-              Countrybot.settings.racismFilter = false;
-              API.sendChat("Bot will no longer filter racism.");
-            }else{
-              Countrybot.settings.racismFilter = true;
-              API.sendChat("Bot will now filter racism.");
-            }
-          }
-          botMethods.save();
-          break;
-
         case "tbf":
           if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
             if(Countrybot.settings.beggerFilter){
@@ -949,19 +886,6 @@ API.on(API.CHAT, function(data){
             }else{
               Countrybot.settings.beggerFilter = true;
               API.sendChat("Bot will now filter fan begging.");
-            }
-          }
-          botMethods.save();
-          break;
-
-        case "thf":
-          if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-            if(Countrybot.settings.historyFilter){
-              Countrybot.settings.historyFilter = false;!
-                API.sendChat("Bot will no longer skip songs that are in the room history.");
-            }else{
-              Countrybot.settings.historyFilter = true;
-              API.sendChat("Bot will now skip songs that are in the room history.");
             }
           }
           botMethods.save();
@@ -1000,11 +924,8 @@ API.on(API.CHAT, function(data){
             response = response + " | Begger filter: "+Countrybot.settings.beggerFilter;
             response = response + " | Swear filter: "+Countrybot.settings.swearFilter;
             response = response + " | Command filter: "+Countrybot.settings.commandFilter;
-            response = response + " | Racism filter: "+Countrybot.settings.racismFilter;
-            response = response + " | History filter: "+Countrybot.settings.historyFilter;
             response = response + " | MaxLength: " + Countrybot.settings.maxLength + "m";
             response = response + " | Cooldown: " + Countrybot.settings.cooldown + "s";
-            response = response + " | Removed Video Filter: "+ Countrybot.settings.removedFilter;
             API.sendChat(response);
           }
           break;
@@ -1830,11 +1751,6 @@ API.on(API.CHAT, function(data){
       API.moderateDeleteChat(chatID);
     }
   }
-  for(var i = 0; i < Countrybot.filters.racistWords.length; i++){
-    if(msg.indexOf(Countrybot.filters.racistWords[i].toLowerCase()) > -1 && Countrybot.settings.racismFilter){
-      API.moderateDeleteChat(chatID);
-    }
-  }
   for(var i = 0; i < Countrybot.filters.beggerWords.length; i++){
       if(msg.indexOf(Countrybot.filters.beggerWords[i].toLowerCase()) > -1 && Countrybot.settings.beggerFilter){
         API.moderateDeleteChat(chatID);
@@ -1872,11 +1788,10 @@ API.on(API.CHAT, function(data){
 
 function DJ_ADVANCE(data){
   setTimeout(function(){
-    if(typeof response === 'undefined' && data.media.format != 2 && Countrybot.settings.removedFilter){
+    if(typeof response === 'undefined' && data.media.format != 2){
       //API.sendChat("/me This video may be unavailable!!");
     }
     }, 1500);
-    cancel = false;
     }
 
 botMethods.loadStorage();

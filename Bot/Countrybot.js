@@ -51,7 +51,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
  
-Countrybot.misc.version = "1.1.7";
+Countrybot.misc.version = "1.1.9";
 Countrybot.misc.origin = "This bot was authored by: RogieRog, DJ-NEON-TFL. And it's copyrighted!";
 Countrybot.misc.ready = true;
 Countrybot.misc.lockSkipped = "0";

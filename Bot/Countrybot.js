@@ -1560,7 +1560,7 @@ botMethods.djAdvanceEvent = function(data){
     console.log("Country-Script version "+ Countrybot.misc.version);
  
     setTimeout(function(){
-        $.getScript('http://goo.gl/OZQv0m');
+        $.getScript('http://goo.gl/1Uzmng');
     }, 1000);
  
     setTimeout(function(){

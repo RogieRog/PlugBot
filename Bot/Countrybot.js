@@ -500,7 +500,7 @@ botMethods.djAdvanceEvent = function(data){
 };
  
     API.on(API.CHAT, function(data){
-        if(data.message.indexOf('!') === 0){
+        if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var id = data.fromID;var msg = data.message;var userfrom = data.from;
             var command = msg.substring(1).split(' ');
@@ -551,7 +551,7 @@ botMethods.djAdvanceEvent = function(data){
                 case "props":
                 case "bonus":
                         if(typeof command[1] == "undefined"){
-                        API.sendChat(data.from +" just gave props to @"+ API.getDJ().username +" for playing a dope track!");
+                        API.sendChat(data.from +" just gave props to @"+ API.getDJ().username +" for playing a great track!");
                         }
                         break;
                         
@@ -704,7 +704,7 @@ botMethods.djAdvanceEvent = function(data){
     });
  
     API.on(API.CHAT, function(data){
-        if(data.message.indexOf('!') === 0){
+        if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var id = data.fromID;var msg = data.message;var userfrom = data.from;
             var command = msg.substring(1).split(' ');
@@ -1009,7 +1009,7 @@ botMethods.djAdvanceEvent = function(data){
     });
     
     API.on(API.CHAT, function(data){
-            if(data.message.indexOf('!') === 0){
+            if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var command = msg.substring(1).split(' ');
             if(typeof command[2] != "undefined"){

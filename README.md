@@ -18,6 +18,6 @@ If there happen to be a bug or problem with the bot you can report issues about 
 
 --------------
 
-###### BOT COMMANDS CAN BE FOUND [HERE](http://goo.gl/hJ8WJk)
+##### BOT COMMANDS CAN BE FOUND [HERE](http://goo.gl/hJ8WJk)
 
 

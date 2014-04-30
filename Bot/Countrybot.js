@@ -51,7 +51,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
  
-Countrybot.misc.version = "1.1.9";
+Countrybot.misc.version = "1.2.0";
 Countrybot.misc.origin = "This bot was authored by: RogieRog, DJ-NEON-TFL. And it's copyrighted!";
 Countrybot.misc.ready = true;
 Countrybot.misc.lockSkipped = "0";
@@ -703,6 +703,31 @@ botMethods.djAdvanceEvent = function(data){
         }
     });
  
+    API.on(API.MOD_CHAT, function(data){
+        if(data.message.indexOf('.') === 0){
+            var msg = data.message, from = data.from, fromID = data.fromID;
+            var id = data.fromID;var msg = data.message;var userfrom = data.from;
+            var command = msg.substring(1).split(' ');
+            if(typeof command[2] != "undefined"){
+                for(var i = 2; i<command.length; i++){
+                    command[1] = command[1] + ' ' + command[i];
+                }
+            }
+            if(Countrybot.misc.ready || Countrybot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
+                switch(command[0].toLowerCase()){
+                        
+                case "skip":
+                       if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                            Countrybot.skip();
+                        }else{
+                           API.sendChat("This command requires staff members only!");
+                        }
+                        break;
+                }
+            }
+        }
+    });
+ 
     API.on(API.CHAT, function(data){
         if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
@@ -739,14 +764,6 @@ botMethods.djAdvanceEvent = function(data){
                             API.sendChat("This command requires staff members only!");
                         }
                         break;        
-                        
-                case "skip":
-                       if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-                            Countrybot.skip();
-                        }else{
-                           API.sendChat("This command requires staff members only!");
-                        }
-                        break;
                         
                 case "unlock":
                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){

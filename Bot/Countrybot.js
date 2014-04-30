@@ -51,7 +51,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
  
-Countrybot.misc.version = "1.2.0";
+Countrybot.misc.version = "1.2.1";
 Countrybot.misc.origin = "This bot was authored by: RogieRog, DJ-NEON-TFL. And it's copyrighted!";
 Countrybot.misc.ready = true;
 Countrybot.misc.lockSkipped = "0";
@@ -718,7 +718,7 @@ botMethods.djAdvanceEvent = function(data){
                         
                 case "skip":
                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-                            Countrybot.skip();
+                            botMethods.skip();
                         }else{
                            API.sendChat("This command requires staff members only!");
                         }

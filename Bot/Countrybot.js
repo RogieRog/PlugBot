@@ -56,7 +56,7 @@ Countrybot.misc.origin = "This bot was authored by: RogieRog, DJ-NEON-TFL. And i
 Countrybot.misc.ready = true;
 Countrybot.misc.lockSkipped = "0";
 Countrybot.misc.tacos = new Array();
-var songBoundary = 60 * 10;
+var songBoundary = 60 * 12;
 var announcementTick = 60 * 10;
 var lastAnnouncement = 0;
 
@@ -68,7 +68,7 @@ cancel = false;
 Countrybot.filters.swearWords = new Array();
 Countrybot.filters.beggerWords = new Array();
  
-Countrybot.settings.maxLength = 10; //minutes
+Countrybot.settings.maxLength = 12; //minutes  // unused
 Countrybot.settings.cooldown = 10; //seconds
 Countrybot.settings.staffMeansAccess = true;
 Countrybot.settings.swearFilter = true;

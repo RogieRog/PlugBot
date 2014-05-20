@@ -51,12 +51,12 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
  
-Countrybot.misc.version = "1.2.3";
+Countrybot.misc.version = "1.2.4";
 Countrybot.misc.origin = "This bot was authored by: RogieRog, DJ-NEON-TFL. And it's copyrighted!";
 Countrybot.misc.ready = true;
 Countrybot.misc.lockSkipped = "0";
 Countrybot.misc.tacos = new Array();
-var songBoundary = 60 * 12;
+var songBoundary = 60 * 15;
 var announcementTick = 60 * 10;
 var lastAnnouncement = 0;
 
@@ -68,7 +68,7 @@ cancel = false;
 Countrybot.filters.swearWords = new Array();
 Countrybot.filters.beggerWords = new Array();
  
-Countrybot.settings.maxLength = 12; //minutes  // unused
+Countrybot.settings.maxLength = 15; //minutes  // unused
 Countrybot.settings.cooldown = 10; //seconds
 Countrybot.settings.staffMeansAccess = true;
 Countrybot.settings.swearFilter = true;

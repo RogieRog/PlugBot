@@ -44,7 +44,7 @@ function SoundUniverseBot(room)
         this.version    = '1.3';
         this.url                = 'http://www.xuniver.se';
        
-        this.maximumTrackLength         = 720;
+        this.maximumTrackLength         = 900;
        
         this.currentTrackAuthor         = ''
         this.currentTrackTitle          = '';

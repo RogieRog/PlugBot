@@ -51,7 +51,7 @@ toSave = {};
 toSave.settings = Countrybot.settings;
 toSave.moderators = Countrybot.moderators;
  
-Countrybot.misc.version = "1.2.4";
+Countrybot.misc.version = "1.2.5";
 Countrybot.misc.origin = "This bot was authored by: RogieRog, DJ-NEON-TFL. And it's copyrighted!";
 Countrybot.misc.ready = true;
 Countrybot.misc.lockSkipped = "0";
@@ -1560,7 +1560,7 @@ botMethods.djAdvanceEvent = function(data){
     console.log("Country-Script version "+ Countrybot.misc.version);
  
     setTimeout(function(){
-        $.getScript('http://goo.gl/1Uzmng');
+        $.getScript('https://rawgithub.com/RogieRog/PlugBot/master/Bot/plug.su.js');
     }, 1000);
  
     setTimeout(function(){
